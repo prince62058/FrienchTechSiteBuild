@@ -51,11 +51,7 @@ export default function HeroSection() {
             </div>
           </div>
           
-          <div className="relative animate-float">
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse">
-              <Rocket className="text-gray-800 h-8 w-8" />
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>
