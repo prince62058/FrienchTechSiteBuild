@@ -34,7 +34,7 @@ export default function Navigation() {
             />
             <span className="text-2xl font-bold">
               <span className="text-[#d96c1e] font-medium">Friench</span>
-              <span className="text-white/70">Tech</span>
+              <span className="text-transparent">Tech</span>
             </span>
           </Link>
           
@@ -46,8 +46,8 @@ export default function Navigation() {
                 href={link.href}
                 className={`transition-colors font-medium ${
                   isActive(link.href)
-                    ? "text-yellow-300/80"
-                    : "text-white/60 hover:text-yellow-300/80"
+                    ? "text-[#d96c1e]"
+                    : "text-transparent hover:text-[#d96c1e]/70"
                 }`}
               >
                 {link.label}
@@ -62,7 +62,7 @@ export default function Navigation() {
           
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white/60 hover:text-yellow-300/80"
+            className="md:hidden text-transparent hover:text-[#d96c1e]/70"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -71,7 +71,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-white/20 bg-black/30 backdrop-blur-sm rounded-lg">
+          <div className="md:hidden mt-4 pb-4 border-t border-transparent bg-transparent">
             <div className="flex flex-col space-y-4 pt-4 px-4">
               {navLinks.map((link) => (
                 <Link
@@ -79,8 +79,8 @@ export default function Navigation() {
                   href={link.href}
                   className={`transition-colors font-medium ${
                     isActive(link.href)
-                      ? "text-yellow-300/80"
-                      : "text-white/60 hover:text-yellow-300/80"
+                      ? "text-[#d96c1e]"
+                      : "text-transparent hover:text-[#d96c1e]/70"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
