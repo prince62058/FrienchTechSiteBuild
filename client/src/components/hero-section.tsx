@@ -37,11 +37,6 @@ export default function HeroSection() {
           </div>
           
           <div className="relative animate-float">
-            <img 
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Modern software development workspace with multiple monitors" 
-              className="rounded-xl shadow-2xl w-full h-auto" 
-            />
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse">
               <Rocket className="text-gray-800 h-8 w-8" />
             </div>
