@@ -1,10 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Rocket } from "lucide-react";
 import ThreeBackground from "./three-background";
+import heroVideo from "@assets/6036381_Keyboard_Laptop_3840x2160_1753162786293.mp4";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center hero-gradient overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
+      
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/50 z-1"></div>
+      
       <ThreeBackground />
       
       <div className="container mx-auto px-6 relative z-10">
