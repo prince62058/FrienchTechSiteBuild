@@ -1,0 +1,53 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Rocket } from "lucide-react";
+import ThreeBackground from "./three-background";
+
+export default function HeroSection() {
+  return (
+    <section className="relative min-h-screen flex items-center hero-gradient overflow-hidden">
+      <ThreeBackground />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="text-white animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Innovative Solution of 
+              <span className="text-yellow-300 block">Software & Hardware</span>
+            </h1>
+            <p className="text-xl mb-8 text-blue-100 leading-relaxed">
+              FrienchTech IT Solution Pvt Ltd is a leading provider of innovative IT solutions, 
+              specializing in software development, consulting services, and cutting-edge technology solutions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg" 
+                className="bg-yellow-500 text-gray-900 hover:bg-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-lg"
+              >
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-all duration-300"
+              >
+                Learn More
+              </Button>
+            </div>
+          </div>
+          
+          <div className="relative animate-float">
+            <img 
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+              alt="Modern software development workspace with multiple monitors" 
+              className="rounded-xl shadow-2xl w-full h-auto" 
+            />
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse">
+              <Rocket className="text-gray-800 h-8 w-8" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
