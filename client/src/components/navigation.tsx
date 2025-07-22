@@ -26,9 +26,11 @@ export default function Navigation() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-friench-orange rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">FT</span>
-            </div>
+            <img 
+              src="@assets/Feiechtechlogo(copy)_1753162037206.png" 
+              alt="FrienchTech Logo" 
+              className="w-12 h-12 object-contain"
+            />
             <span className="text-2xl font-bold">
               <span className="text-friench-orange">Friench</span>
               <span className="text-gray-800">Tech</span>
