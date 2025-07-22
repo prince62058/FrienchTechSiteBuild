@@ -33,7 +33,7 @@ export default function Navigation() {
               className="w-12 h-12 object-contain"
             />
             <span className="text-2xl font-bold">
-              <span className="text-[#d96c1e] font-semibold">Friench</span>
+              <span className="text-[#d96c1e] font-medium">Friench</span>
               <span className="text-gray-800">Tech</span>
             </span>
           </Link>
