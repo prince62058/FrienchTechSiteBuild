@@ -34,7 +34,7 @@ export default function Navigation() {
             />
             <span className="text-2xl font-bold">
               <span className="text-[#d96c1e] font-medium">Friench</span>
-              <span className="text-transparent">Tech</span>
+              <span className="text-white">Tech</span>
             </span>
           </Link>
           
@@ -47,7 +47,7 @@ export default function Navigation() {
                 className={`transition-colors font-medium ${
                   isActive(link.href)
                     ? "text-[#d96c1e]"
-                    : "text-transparent hover:text-[#d96c1e]/70"
+                    : "text-white hover:text-[#d96c1e]"
                 }`}
               >
                 {link.label}
@@ -62,7 +62,7 @@ export default function Navigation() {
           
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-transparent hover:text-[#d96c1e]/70"
+            className="md:hidden text-white hover:text-[#d96c1e]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -80,7 +80,7 @@ export default function Navigation() {
                   className={`transition-colors font-medium ${
                     isActive(link.href)
                       ? "text-[#d96c1e]"
-                      : "text-transparent hover:text-[#d96c1e]/70"
+                      : "text-white hover:text-[#d96c1e]"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
