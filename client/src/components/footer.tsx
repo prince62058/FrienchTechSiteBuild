@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Code, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import logoImage from "@assets/Feiechtechlogo(copy)_1753162037206.png";
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
           <div className="col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <img 
-                src="@assets/Feiechtechlogo(copy)_1753162037206.png" 
+                src={logoImage} 
                 alt="FrienchTech Logo" 
                 className="w-12 h-12 object-contain"
               />

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImage from "@assets/Feiechtechlogo(copy)_1753162037206.png";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -27,7 +28,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
             <img 
-              src="@assets/Feiechtechlogo(copy)_1753162037206.png" 
+              src={logoImage} 
               alt="FrienchTech Logo" 
               className="w-12 h-12 object-contain"
             />
