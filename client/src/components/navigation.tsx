@@ -23,7 +23,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-transparent backdrop-blur-sm z-50 transition-all duration-300">
+    <nav className="fixed top-0 w-full bg-transparent z-50 transition-all duration-300">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
@@ -34,7 +34,7 @@ export default function Navigation() {
             />
             <span className="text-2xl font-bold">
               <span className="text-[#d96c1e] font-medium">Friench</span>
-              <span className="text-gray-800">Tech</span>
+              <span className="text-white">Tech</span>
             </span>
           </Link>
           
@@ -46,8 +46,8 @@ export default function Navigation() {
                 href={link.href}
                 className={`transition-colors font-medium ${
                   isActive(link.href)
-                    ? "text-friench-blue"
-                    : "text-gray-700 hover:text-friench-blue"
+                    ? "text-yellow-300"
+                    : "text-white hover:text-yellow-300"
                 }`}
               >
                 {link.label}
@@ -62,7 +62,7 @@ export default function Navigation() {
           
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 hover:text-friench-blue"
+            className="md:hidden text-white hover:text-yellow-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -71,16 +71,16 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
-            <div className="flex flex-col space-y-4 pt-4">
+          <div className="md:hidden mt-4 pb-4 border-t border-white/20 bg-black/30 backdrop-blur-sm rounded-lg">
+            <div className="flex flex-col space-y-4 pt-4 px-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={`transition-colors font-medium ${
                     isActive(link.href)
-                      ? "text-friench-blue"
-                      : "text-gray-700 hover:text-friench-blue"
+                      ? "text-yellow-300"
+                      : "text-white hover:text-yellow-300"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
