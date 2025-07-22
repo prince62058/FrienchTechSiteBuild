@@ -7,11 +7,14 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-friench-orange rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">FT</span>
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 bg-friench-orange rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-xl">FT</span>
               </div>
-              <span className="text-2xl font-bold">FrienchTech</span>
+              <span className="text-2xl font-bold">
+                <span className="text-friench-orange">Friench</span>
+                <span className="text-white">Tech</span>
+              </span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Welcome to FrienchTech! We specialize in creating captivating websites that drive results. 
