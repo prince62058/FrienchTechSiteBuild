@@ -23,7 +23,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-transparent z-50 transition-all duration-300">
+    <nav className="fixed top-0 w-full z-50 transition-all duration-300 bg-[#404040]">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
