@@ -20,49 +20,49 @@ export default function Projects() {
     {
       title: "App Generator",
       description: "This service provides a user-friendly platform to generate custom mobile applications without the need for coding skills. Create apps for various purposes such as business, education, entertainment.",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
+      image: "https://frienchtech.com/images/App_Generater.png",
       link: "https://play.google.com/store/apps/details?id=com.appgenerater"
     },
     {
       title: "My Manager",
       description: "My Manager is a personal productivity tool that helps users organize their tasks, schedules, and projects efficiently. It offers features such as task lists, calendar, and project management.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
+      image: "https://frienchtech.com/images/mymanager.jpg",
       link: "#"
     },
     {
       title: "Fast Scanner",
       description: "This service utilizes advanced image recognition technology to convert images containing text into editable text format. It is useful for tasks such as extracting text from documents.",
-      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
+      image: "https://frienchtech.com/images/fast_scan.jpg",
       link: "https://play.google.com/store/apps/details?id=com.frienchtech.imagetotext"
     },
     {
       title: "Self Help Audio Book",
       description: "The Self Help Audio Book service offers a vast collection of audio books covering various self-help topics such as personal development, motivation, mindfulness, and success strategies.",
-      image: "https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
+      image: "https://frienchtech.com/images/audiobook.png",
       link: "https://play.google.com/store/apps/details?id=in.minoractivity.audiobook"
     },
     {
       title: "Chalo Pandit Ji",
       description: "Chalo Pandit Ji is the nation's largest aggregator of Pandit Ji's, offering personalized pooja services to devotees. Users can book appointments for various religious ceremonies and rituals.",
-      image: "https://images.unsplash.com/photo-1582786647829-0b5ab0b4b2b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
+      image: "https://frienchtech.com/images/panditji.png",
       link: "https://play.google.com/store/apps/details?id=in.minoracivity.lnc"
     },
     {
       title: "Photo Copy",
       description: "Photo Copy is a document scanning and printing service that allows users to make copies of physical documents quickly and conveniently. It offers high-quality scanning and printing solutions for both personal and professional use.",
-      image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
+      image: "https://frienchtech.com/images/photocopy.png",
       link: "#"
     },
     {
       title: "NeuroTherapy App",
       description: "Our NeuroTherapy Management App is tailored for doctors, offering efficient tools to streamline patient care. Access patient records, treatment plans, and communicate seamlessly—all in one platform.",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
+      image: "https://frienchtech.com/images/neurotherapy.jpg",
       link: "#"
     },
     {
       title: "New Aashiyana",
       description: "Explore your dream home with the new Aashiyana Website! Our comprehensive platform offers a wide range of properties for sale and rent, expert guidance from real estate professionals, and innovative tools to simplify your property search.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
+      image: "https://frienchtech.com/images/newaashiyana.jpg",
       link: "https://www.newaashiyanaproperty.com/"
     }
   ];
