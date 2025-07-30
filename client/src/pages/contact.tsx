@@ -11,11 +11,14 @@ import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { insertContactSchema, type InsertContact } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
+import { useScrollAnimations } from "@/hooks/use-scroll-animations";
+import ThreeSceneEnhanced from "@/components/three-scene-enhanced";
 
 export default function Contact() {
   const { toast } = useToast();
   const [userLocation, setUserLocation] = useState<{lat: number, lng: number} | null>(null);
+  useScrollAnimations();
 
   const form = useForm<InsertContact>({
     resolver: zodResolver(insertContactSchema),
@@ -86,69 +89,113 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-20 hero-gradient text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Ready to start your next project? Get in touch with our expert team
+    <div className="pt-20 bg-slate-900 min-h-screen">
+      {/* Enhanced Hero Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <ThreeSceneEnhanced scrollProgress={0} />
+        
+        {/* Animated Background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="animated-bg"></div>
+          <div className="particles-container">
+            {Array.from({ length: 30 }).map((_, i) => (
+              <div key={i} className="particle" style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 20}s`,
+                animationDuration: `${15 + Math.random() * 10}s`
+              }}></div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-blue-900/30 to-purple-900/50 z-1"></div>
+        
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <div className="hero-title space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 backdrop-blur-sm rounded-full border border-cyan-500/30 text-cyan-300 text-sm font-medium">
+              <MessageCircle className="w-4 h-4" />
+              Get In Touch
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white">
+              <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
+                Let's Build
+              </span>
+              <br />
+              <span className="text-white">Together</span>
+            </h1>
+          </div>
+          
+          <p className="hero-description text-xl md:text-2xl text-blue-100 leading-relaxed max-w-3xl mx-auto mt-6">
+            Ready to transform your ideas into reality? Connect with our expert team for innovative IT solutions
           </p>
         </div>
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-slate-900">
         <div className="container mx-auto px-6">
+          <div className="text-center mb-16 hero-description">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-cyan-300 to-purple-300 bg-clip-text text-transparent">
+                Contact Information
+              </span>
+            </h2>
+            <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+              Multiple ways to reach our team for your business needs
+            </p>
+          </div>
+          
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Information */}
             <div>
-              <Card className="shadow-lg mb-8 animate-fade-in-up">
+              <Card className="shadow-lg mb-8 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover-card">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-8">Get in Touch</h2>
+                  <h2 className="text-2xl font-bold text-white mb-8">Get in Touch</h2>
                   
                   <div className="space-y-6">
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                        <MapPin className="h-6 w-6 text-friench-blue" />
+                    <div className="flex items-start group">
+                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-lg flex items-center justify-center mr-4 border border-cyan-500/30 group-hover:scale-110 transition-transform">
+                        <MapPin className="h-6 w-6 text-cyan-300" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-800 mb-2">Address</h3>
-                        <p className="text-gray-600">
+                        <h3 className="font-semibold text-white mb-2">Address</h3>
+                        <p className="text-slate-300">
                           MB-33 block C First floor Mansrovar Complex<br />
                           Bhopal, M.P.- 462016
                         </p>
                       </div>
                     </div>
                     
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                        <Phone className="h-6 w-6 text-green-600" />
+                    <div className="flex items-start group">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg flex items-center justify-center mr-4 border border-green-500/30 group-hover:scale-110 transition-transform">
+                        <Phone className="h-6 w-6 text-green-300" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-800 mb-2">Phone</h3>
-                        <p className="text-gray-600">+91-7554611870</p>
-                        <p className="text-gray-600">0755 461 1870</p>
+                        <h3 className="font-semibold text-white mb-2">Phone</h3>
+                        <p className="text-slate-300">+91-7554611870</p>
+                        <p className="text-slate-300">0755 461 1870</p>
                       </div>
                     </div>
                     
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                        <Mail className="h-6 w-6 text-purple-600" />
+                    <div className="flex items-start group">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center mr-4 border border-purple-500/30 group-hover:scale-110 transition-transform">
+                        <Mail className="h-6 w-6 text-purple-300" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-800 mb-2">Email</h3>
-                        <p className="text-gray-600">info@frienchtech.com</p>
+                        <h3 className="font-semibold text-white mb-2">Email</h3>
+                        <p className="text-slate-300">info@frienchtech.com</p>
                       </div>
                     </div>
 
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-                        <Clock className="h-6 w-6 text-friench-orange" />
+                    <div className="flex items-start group">
+                      <div className="w-12 h-12 bg-gradient-to-br from-orange-500/20 to-yellow-500/20 rounded-lg flex items-center justify-center mr-4 border border-orange-500/30 group-hover:scale-110 transition-transform">
+                        <Clock className="h-6 w-6 text-orange-300" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-800 mb-2">Business Hours</h3>
-                        <p className="text-gray-600">
+                        <h3 className="font-semibold text-white mb-2">Business Hours</h3>
+                        <p className="text-slate-300">
                           Monday - Friday: 9:00 AM - 6:00 PM<br />
                           Saturday: 10:00 AM - 4:00 PM
                         </p>
@@ -159,13 +206,13 @@ export default function Contact() {
               </Card>
               
               {/* Location Services */}
-              <Card className="shadow-lg animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+              <Card className="shadow-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover-card">
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Your Location</h3>
+                  <h3 className="text-lg font-semibold text-white mb-4">Your Location</h3>
                   {userLocation ? (
-                    <div className="bg-green-50 p-4 rounded-lg">
-                      <p className="text-green-800 font-medium">Location Detected:</p>
-                      <p className="text-green-600 text-sm">
+                    <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 p-4 rounded-lg border border-green-500/30">
+                      <p className="text-green-300 font-medium">Location Detected:</p>
+                      <p className="text-green-200 text-sm">
                         Latitude: {userLocation.lat.toFixed(6)}<br />
                         Longitude: {userLocation.lng.toFixed(6)}
                       </p>
@@ -174,7 +221,7 @@ export default function Contact() {
                     <Button 
                       onClick={getUserLocation}
                       variant="outline" 
-                      className="w-full"
+                      className="w-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border-cyan-500/50 text-cyan-300 hover:from-cyan-500 hover:to-blue-500 hover:text-white"
                     >
                       <MapPin className="mr-2 h-4 w-4" />
                       Get My Location
@@ -184,14 +231,14 @@ export default function Contact() {
               </Card>
 
               {/* Map Placeholder */}
-              <Card className="shadow-lg mt-8 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+              <Card className="shadow-lg mt-8 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover-card">
                 <CardContent className="p-4">
-                  <div className="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center">
-                    <div className="text-center text-gray-500">
-                      <MapPin className="h-12 w-12 mx-auto mb-4 text-friench-blue" />
-                      <p className="font-semibold">Interactive Map</p>
-                      <p className="text-sm">Google Maps Integration</p>
-                      <p className="text-xs mt-2">
+                  <div className="w-full h-64 bg-gradient-to-br from-slate-700/50 to-slate-800/50 rounded-lg flex items-center justify-center border border-slate-600/30">
+                    <div className="text-center text-slate-300">
+                      <MapPin className="h-12 w-12 mx-auto mb-4 text-cyan-300" />
+                      <p className="font-semibold text-white">Interactive Map</p>
+                      <p className="text-sm text-slate-300">Google Maps Integration</p>
+                      <p className="text-xs mt-2 text-slate-400">
                         MB-33 Mansrovar Complex, Bhopal
                       </p>
                     </div>
@@ -201,40 +248,40 @@ export default function Contact() {
             </div>
             
             {/* Contact Form */}
-            <Card className="shadow-lg animate-fade-in-up" style={{ animationDelay: "300ms" }}>
+            <Card className="shadow-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover-card">
               <CardContent className="p-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-8">Send us a Message</h2>
+                <h2 className="text-2xl font-bold text-white mb-8">Send us a Message</h2>
                 
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="firstName" className="text-sm font-semibold text-gray-700">
+                      <Label htmlFor="firstName" className="text-sm font-semibold text-white">
                         First Name *
                       </Label>
                       <Input
                         id="firstName"
                         {...form.register("firstName")}
                         placeholder="John"
-                        className="mt-2"
+                        className="mt-2 bg-slate-700/50 border-slate-600/50 text-white placeholder:text-slate-400 focus:border-cyan-500"
                       />
                       {form.formState.errors.firstName && (
-                        <p className="text-red-500 text-sm mt-1">
+                        <p className="text-red-400 text-sm mt-1">
                           {form.formState.errors.firstName.message}
                         </p>
                       )}
                     </div>
                     <div>
-                      <Label htmlFor="lastName" className="text-sm font-semibold text-gray-700">
+                      <Label htmlFor="lastName" className="text-sm font-semibold text-white">
                         Last Name *
                       </Label>
                       <Input
                         id="lastName"
                         {...form.register("lastName")}
                         placeholder="Doe"
-                        className="mt-2"
+                        className="mt-2 bg-slate-700/50 border-slate-600/50 text-white placeholder:text-slate-400 focus:border-cyan-500"
                       />
                       {form.formState.errors.lastName && (
-                        <p className="text-red-500 text-sm mt-1">
+                        <p className="text-red-400 text-sm mt-1">
                           {form.formState.errors.lastName.message}
                         </p>
                       )}
@@ -242,7 +289,7 @@ export default function Contact() {
                   </div>
                   
                   <div>
-                    <Label htmlFor="email" className="text-sm font-semibold text-gray-700">
+                    <Label htmlFor="email" className="text-sm font-semibold text-white">
                       Email *
                     </Label>
                     <Input
@@ -250,17 +297,17 @@ export default function Contact() {
                       type="email"
                       {...form.register("email")}
                       placeholder="john@example.com"
-                      className="mt-2"
+                      className="mt-2 bg-slate-700/50 border-slate-600/50 text-white placeholder:text-slate-400 focus:border-cyan-500"
                     />
                     {form.formState.errors.email && (
-                      <p className="text-red-500 text-sm mt-1">
+                      <p className="text-red-400 text-sm mt-1">
                         {form.formState.errors.email.message}
                       </p>
                     )}
                   </div>
                   
                   <div>
-                    <Label htmlFor="phone" className="text-sm font-semibold text-gray-700">
+                    <Label htmlFor="phone" className="text-sm font-semibold text-white">
                       Phone
                     </Label>
                     <Input
@@ -268,19 +315,19 @@ export default function Contact() {
                       type="tel"
                       {...form.register("phone")}
                       placeholder="+91 1234567890"
-                      className="mt-2"
+                      className="mt-2 bg-slate-700/50 border-slate-600/50 text-white placeholder:text-slate-400 focus:border-cyan-500"
                     />
                   </div>
                   
                   <div>
-                    <Label className="text-sm font-semibold text-gray-700">
+                    <Label className="text-sm font-semibold text-white">
                       Service Required
                     </Label>
                     <Select onValueChange={(value) => form.setValue("service", value)}>
-                      <SelectTrigger className="mt-2">
+                      <SelectTrigger className="mt-2 bg-slate-700/50 border-slate-600/50 text-white">
                         <SelectValue placeholder="Select a Service" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-slate-800 border-slate-600">
                         <SelectItem value="software-development">Software Development</SelectItem>
                         <SelectItem value="web-development">Web Development</SelectItem>
                         <SelectItem value="app-development">App Development</SelectItem>
@@ -294,7 +341,7 @@ export default function Contact() {
                   </div>
                   
                   <div>
-                    <Label htmlFor="message" className="text-sm font-semibold text-gray-700">
+                    <Label htmlFor="message" className="text-sm font-semibold text-white">
                       Message *
                     </Label>
                     <Textarea
@@ -302,10 +349,10 @@ export default function Contact() {
                       {...form.register("message")}
                       rows={5}
                       placeholder="Tell us about your project requirements..."
-                      className="mt-2"
+                      className="mt-2 bg-slate-700/50 border-slate-600/50 text-white placeholder:text-slate-400 focus:border-cyan-500"
                     />
                     {form.formState.errors.message && (
-                      <p className="text-red-500 text-sm mt-1">
+                      <p className="text-red-400 text-sm mt-1">
                         {form.formState.errors.message.message}
                       </p>
                     )}
@@ -313,10 +360,15 @@ export default function Contact() {
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-friench-blue text-white hover:bg-friench-blue/90 py-4 transform hover:scale-105 transition-all"
+                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-4 transform hover:scale-105 transition-all duration-300 font-semibold group"
                     disabled={contactMutation.isPending}
                   >
-                    {contactMutation.isPending ? "Sending..." : "Send Message"}
+                    {contactMutation.isPending ? "Sending..." : (
+                      <>
+                        Send Message
+                        <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>
