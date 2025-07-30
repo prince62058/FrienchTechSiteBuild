@@ -15,18 +15,14 @@ import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
 import { useLoading } from "@/hooks/use-loading";
 import { PageSkeleton } from "@/components/skeleton-loaders";
-import ThreeSceneEnhanced from "@/components/three-scene-enhanced";
+
 
 export default function Contact() {
   const { toast } = useToast();
   const [userLocation, setUserLocation] = useState<{lat: number, lng: number} | null>(null);
   useScrollAnimations();
   const { isLoading } = useLoading({ delay: 700 });
-
-  if (isLoading) {
-    return <PageSkeleton type="contact" />;
-  }
-
+  
   const form = useForm<InsertContact>({
     resolver: zodResolver(insertContactSchema),
     defaultValues: {
@@ -64,6 +60,10 @@ export default function Contact() {
     contactMutation.mutate(data);
   };
 
+  if (isLoading) {
+    return <PageSkeleton type="contact" />;
+  }
+
   // Get user's current location
   const getUserLocation = () => {
     if (navigator.geolocation) {
@@ -99,8 +99,6 @@ export default function Contact() {
     <div className="pt-20 bg-slate-900 min-h-screen">
       {/* Enhanced Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <ThreeSceneEnhanced scrollProgress={0} />
-        
         {/* Animated Background */}
         <div className="absolute inset-0 -z-10">
           <div className="animated-bg"></div>
