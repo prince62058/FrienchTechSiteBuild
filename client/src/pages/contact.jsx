@@ -303,7 +303,7 @@ export default function Contact() {
             <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm animate-on-scroll">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Find Us</h3>
-                <div className="aspect-video bg-slate-700 rounded-lg overflow-hidden">
+                <div className="h-96 bg-slate-700 rounded-lg overflow-hidden">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.880096189357!2d72.8776559!3d19.0759837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c62024000000%3A0x0!2sBandra+Kurla+Complex%2C+Bandra+East%2C+Mumbai%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
                     width="100%"

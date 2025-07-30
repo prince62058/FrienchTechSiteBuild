@@ -73,7 +73,7 @@ export default function Navigation() {
             ))}
             <Link href="/contact">
               <Button className="bg-friench-blue text-white hover:bg-friench-blue/90">
-                Get Started
+                Contact
               </Button>
             </Link>
           </div>

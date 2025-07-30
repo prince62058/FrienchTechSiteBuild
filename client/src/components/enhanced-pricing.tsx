@@ -172,7 +172,7 @@ export default function EnhancedPricing() {
                     className={`w-full bg-gradient-to-r ${plan.color} hover:opacity-90 text-white font-semibold py-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl`}
                     size="lg"
                   >
-                    Get Started
+                    Contact
                     <IconComponent className="ml-2 w-5 h-5" />
                   </Button>
                 </CardFooter>
