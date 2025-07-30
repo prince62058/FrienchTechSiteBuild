@@ -300,12 +300,12 @@ export default function Contact() {
             </Card>
 
             {/* Map */}
-            <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm animate-on-scroll">
+            <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm animate-on-scroll lg:col-span-3">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Find Us</h3>
-                <div className="h-96 bg-slate-700 rounded-lg overflow-hidden">
+                <div className="h-[500px] bg-slate-700 rounded-lg overflow-hidden">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.880096189357!2d72.8776559!3d19.0759837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c62024000000%3A0x0!2sBandra+Kurla+Complex%2C+Bandra+East%2C+Mumbai%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.0234567890123!2d77.4356!3d23.225018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c428a2a810b8d%3A0xa33a3b0b7b6b7b6b!2sBhopal%2C+Madhya+Pradesh!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
