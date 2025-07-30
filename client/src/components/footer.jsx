@@ -25,18 +25,33 @@ export default function Footer() {
               Elevate your online presence with us!
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors">
-                <Twitter size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors">
-                <Linkedin size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors">
-                <Instagram size={18} />
-              </a>
+             <a
+  href="#"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors"
+>
+  <Twitter size={18} />
+</a>
+
+<a
+  href="https://www.linkedin.com/company/frienchtech-it-solutions/?viewAsMember=true"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors"
+>
+  <Linkedin size={18} />
+</a>
+
+<a
+  href="https://www.instagram.com/frienchtech_it/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors"
+>
+  <Instagram size={18} />
+</a>
+
             </div>
           </div>
           
