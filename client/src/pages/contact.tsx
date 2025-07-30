@@ -13,12 +13,19 @@ import { insertContactSchema, type InsertContact } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
+import { useLoading } from "@/hooks/use-loading";
+import { PageSkeleton } from "@/components/skeleton-loaders";
 import ThreeSceneEnhanced from "@/components/three-scene-enhanced";
 
 export default function Contact() {
   const { toast } = useToast();
   const [userLocation, setUserLocation] = useState<{lat: number, lng: number} | null>(null);
   useScrollAnimations();
+  const { isLoading } = useLoading({ delay: 700 });
+
+  if (isLoading) {
+    return <PageSkeleton type="contact" />;
+  }
 
   const form = useForm<InsertContact>({
     resolver: zodResolver(insertContactSchema),

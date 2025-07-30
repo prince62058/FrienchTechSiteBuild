@@ -17,6 +17,8 @@ import {
   CheckCircle
 } from "lucide-react";
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
+import { useLoading } from "@/hooks/use-loading";
+import { PageSkeleton } from "@/components/skeleton-loaders";
 import ThreeSceneEnhanced from "@/components/three-scene-enhanced";
 
 const jobOpenings = [
@@ -161,6 +163,11 @@ const benefits = [
 
 export default function Careers() {
   useScrollAnimations();
+  const { isLoading } = useLoading({ delay: 1200 });
+
+  if (isLoading) {
+    return <PageSkeleton type="careers" />;
+  }
 
   return (
     <div className="pt-20 bg-slate-900 min-h-screen">

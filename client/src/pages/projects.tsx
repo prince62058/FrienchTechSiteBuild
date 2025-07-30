@@ -4,10 +4,17 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Rocket, Star, Trophy } from "lucide-react";
 import AnimatedCounter from "@/components/animated-counter";
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
+import { useLoading } from "@/hooks/use-loading";
+import { PageSkeleton } from "@/components/skeleton-loaders";
 import ThreeSceneEnhanced from "@/components/three-scene-enhanced";
 
 export default function Projects() {
   useScrollAnimations();
+  const { isLoading } = useLoading({ delay: 1000 });
+
+  if (isLoading) {
+    return <PageSkeleton type="projects" />;
+  }
 
   const projects = [
     {

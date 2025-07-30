@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedCounter from "@/components/animated-counter";
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
+import { useLoading } from "@/hooks/use-loading";
+import { PageSkeleton } from "@/components/skeleton-loaders";
 import { 
   Code, 
   Cpu, 
@@ -14,6 +16,11 @@ import {
 
 export default function About() {
   useScrollAnimations();
+  const { isLoading } = useLoading({ delay: 800 });
+
+  if (isLoading) {
+    return <PageSkeleton type="about" />;
+  }
   const technologies = [
     { name: "Java", icon: Coffee, color: "text-orange-600", bgColor: "bg-orange-100" },
     { name: "Spring Boot", icon: Zap, color: "text-green-600", bgColor: "bg-green-100" },
