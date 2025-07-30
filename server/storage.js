@@ -1,18 +1,22 @@
 import mongoose from 'mongoose';
 import { userSchema, contactSchema } from "../shared/schema.js";
 
-// MongoDB connection
+// MongoDB connection - For Replit environment, fallback to in-memory storage
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/frienchtech';
-    await mongoose.connect(mongoURI);
-    console.log('MongoDB connected successfully');
+    // Only try to connect to MongoDB if MONGODB_URI is explicitly provided
+    if (process.env.MONGODB_URI) {
+      await mongoose.connect(process.env.MONGODB_URI);
+      console.log('MongoDB connected successfully');
+      return true;
+    } else {
+      console.log('No MONGODB_URI provided, using in-memory storage');
+      return false;
+    }
   } catch (error) {
-    console.error('MongoDB connection error:', error);
-    // Use in-memory storage as fallback
+    console.log('MongoDB connection failed, using in-memory storage');
     return false;
   }
-  return true;
 };
 
 // MongoDB User Model
@@ -31,70 +35,7 @@ const ContactModel = mongoose.model('Contact', new mongoose.Schema({
   message: { type: String, required: true },
 }, { timestamps: true }));
 
-export class MongoStorage {
-  constructor() {
-    this.isConnected = false;
-    this.connectDB();
-  }
-
-  async connectDB() {
-    this.isConnected = await connectDB();
-  }
-
-  async getUser(id) {
-    if (!this.isConnected) return undefined;
-    try {
-      return await UserModel.findById(id);
-    } catch (error) {
-      console.error('Error getting user:', error);
-      return undefined;
-    }
-  }
-
-  async getUserByUsername(username) {
-    if (!this.isConnected) return undefined;
-    try {
-      return await UserModel.findOne({ username });
-    } catch (error) {
-      console.error('Error getting user by username:', error);
-      return undefined;
-    }
-  }
-
-  async createUser(userData) {
-    if (!this.isConnected) throw new Error('Database not connected');
-    try {
-      const user = new UserModel(userData);
-      return await user.save();
-    } catch (error) {
-      console.error('Error creating user:', error);
-      throw error;
-    }
-  }
-
-  async createContact(contactData) {
-    if (!this.isConnected) throw new Error('Database not connected');
-    try {
-      const contact = new ContactModel(contactData);
-      return await contact.save();
-    } catch (error) {
-      console.error('Error creating contact:', error);
-      throw error;
-    }
-  }
-
-  async getContacts() {
-    if (!this.isConnected) return [];
-    try {
-      return await ContactModel.find().sort({ createdAt: -1 });
-    } catch (error) {
-      console.error('Error getting contacts:', error);
-      return [];
-    }
-  }
-}
-
-// Fallback in-memory storage
+// Fallback in-memory storage - defined first
 export class MemStorage {
   constructor() {
     this.users = new Map();
@@ -139,6 +80,79 @@ export class MemStorage {
     );
   }
 }
+
+export class MongoStorage {
+  constructor() {
+    this.isConnected = false;
+    this.memoryFallback = new MemStorage();
+    this.connectDB();
+  }
+
+  async connectDB() {
+    this.isConnected = await connectDB();
+  }
+
+  async getUser(id) {
+    if (!this.isConnected) return undefined;
+    try {
+      return await UserModel.findById(id);
+    } catch (error) {
+      console.error('Error getting user:', error);
+      return undefined;
+    }
+  }
+
+  async getUserByUsername(username) {
+    if (!this.isConnected) return undefined;
+    try {
+      return await UserModel.findOne({ username });
+    } catch (error) {
+      console.error('Error getting user by username:', error);
+      return undefined;
+    }
+  }
+
+  async createUser(userData) {
+    if (!this.isConnected) throw new Error('Database not connected');
+    try {
+      const user = new UserModel(userData);
+      return await user.save();
+    } catch (error) {
+      console.error('Error creating user:', error);
+      throw error;
+    }
+  }
+
+  async createContact(contactData) {
+    if (!this.isConnected) {
+      // Fallback to in-memory storage when database is not connected
+      console.log('Database not connected, storing contact in memory');
+      return this.memoryFallback.createContact(contactData);
+    }
+    try {
+      const contact = new ContactModel(contactData);
+      return await contact.save();
+    } catch (error) {
+      console.error('Error creating contact:', error);
+      // Fallback to in-memory storage on error
+      return this.memoryFallback.createContact(contactData);
+    }
+  }
+
+  async getContacts() {
+    if (!this.isConnected) {
+      return this.memoryFallback.getContacts();
+    }
+    try {
+      return await ContactModel.find().sort({ createdAt: -1 });
+    } catch (error) {
+      console.error('Error getting contacts:', error);
+      return this.memoryFallback.getContacts();
+    }
+  }
+}
+
+
 
 // Try MongoDB first, fallback to memory storage
 let storage;
