@@ -5,9 +5,6 @@ import * as THREE from 'three';
 export default function ThreeSceneEnhanced({ 
   className = "", 
   scrollProgress = 0 
-}: {
-  className?;
-  scrollProgress?;
 }) {
   return (
     <div className={`fixed inset-0 -z-10 ${className}`}>

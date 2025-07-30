@@ -61,7 +61,7 @@ const technologies = [
 
 export default function TechnologyShowcase() {
   const [selectedTech, setSelectedTech] = useState(0);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [hoveredCard, setHoveredCard] = useState(null);
   useScrollAnimations();
 
   // Auto-rotate through technologies

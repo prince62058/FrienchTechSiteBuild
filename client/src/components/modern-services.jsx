@@ -105,7 +105,7 @@ const services = [
 ];
 
 export default function ModernServices() {
-  const [hoveredService, setHoveredService] = useState<number | null>(null);
+  const [hoveredService, setHoveredService] = useState(null);
   useScrollAnimations();
 
   return (

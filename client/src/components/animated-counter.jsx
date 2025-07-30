@@ -8,7 +8,7 @@ export default function AnimatedCounter({
   prefix = '', 
   className = '',
   startOnView = true 
-) {
+}) {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
   const counterRef = useRef(null);

@@ -83,7 +83,7 @@ const formatPrice = (price) => {
 };
 
 export default function EnhancedPricing() {
-  const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
+  const [hoveredPlan, setHoveredPlan] = useState(null);
   useScrollAnimations();
 
   return (

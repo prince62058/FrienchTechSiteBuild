@@ -66,7 +66,7 @@ const stats = [
 ];
 
 export default function InteractiveStats() {
-  const [hoveredStat, setHoveredStat] = useState<number | null>(null);
+  const [hoveredStat, setHoveredStat] = useState(null);
   useScrollAnimations();
 
   return (
