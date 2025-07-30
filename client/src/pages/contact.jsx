@@ -255,8 +255,8 @@ export default function Contact() {
                     <div>
                       <h4 className="font-semibold text-white mb-1">Office Address</h4>
                       <p className="text-slate-400">
-                        123 Tech Street, Innovation District<br />
-                        Mumbai, Maharashtra 400001<br />
+                        MB-33 block C First floor Mansrovar Complex   Bhopal<br />
+                        M.P.- 462016<br />
                         India
                       </p>
                     </div>
@@ -268,7 +268,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-white mb-1">Phone</h4>
-                      <p className="text-slate-400">+91 98765 43210</p>
+                      <p className="text-slate-400">+91-7554611870,</p>
                     </div>
                   </div>
 
@@ -278,7 +278,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-white mb-1">Email</h4>
-                      <p className="text-slate-400">hello@frienchtech.com</p>
+                      <p className="text-slate-400">info@frienchtech.com</p>
                     </div>
                   </div>
 
