@@ -198,7 +198,7 @@ export default function TechnologyShowcase() {
                   <Button 
                     className={`bg-gradient-to-r ${technologies[selectedTech].color} hover:opacity-90 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl`}
                   >
-                    Start Your Project
+                    Learn More
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </div>
