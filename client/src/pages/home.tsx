@@ -4,7 +4,7 @@ import InteractiveStats from "@/components/interactive-stats";
 import TechnologyShowcase from "@/components/technology-showcase";
 import TestimonialsSection from "@/components/testimonials-section";
 import ModernServices from "@/components/modern-services";
-import EnhancedPricing from "@/components/enhanced-pricing";
+
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -114,8 +114,7 @@ export default function Home() {
       {/* Testimonials */}
       <TestimonialsSection />
       
-      {/* Pricing Preview */}
-      <EnhancedPricing />
+
       
       {/* Process Section */}
       <section className="py-20 relative overflow-hidden bg-slate-900">
