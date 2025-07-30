@@ -80,7 +80,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400">
-            Copyright © 2023-24 FrienchTech. All rights reserved.
+            Copyright © 2023-25 FrienchTech. All rights reserved.
           </p>
         </div>
       </div>
