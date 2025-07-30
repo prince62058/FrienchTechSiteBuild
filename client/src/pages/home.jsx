@@ -29,17 +29,17 @@ export default function Home() {
   return (
     <div className="bg-slate-900 min-h-screen">
       <HeroSection />
-      
+
       {/* Interactive Stats */}
       <InteractiveStats />
-      
+
       {/* Technology Showcase */}
       <TechnologyShowcase />
-      
+
       {/* Why Choose Us Section */}
       <section className="py-20 relative overflow-hidden bg-slate-900">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-cyan-900/10 to-purple-900/10"></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16 animate-on-scroll">
             <Badge variant="outline" className="mb-4 text-cyan-300 border-cyan-300/50">
@@ -106,14 +106,14 @@ export default function Home() {
 
       {/* Services Preview */}
       <ModernServices />
-      
+
       {/* Testimonials */}
       <TestimonialsSection />
-      
+
       {/* Process Timeline */}
       <section className="py-20 bg-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent"></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16 animate-on-scroll">
             <Badge variant="outline" className="mb-4 text-purple-300 border-purple-300/50">
@@ -183,7 +183,7 @@ export default function Home() {
       {/* Call to Action */}
       <section className="py-20 bg-gradient-to-r from-slate-900 via-cyan-900/20 to-purple-900/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23334155%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-        
+
         <div className="container mx-auto px-6 text-center relative z-10">
           <div className="animate-on-scroll">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">

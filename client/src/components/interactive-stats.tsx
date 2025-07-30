@@ -73,7 +73,7 @@ export default function InteractiveStats() {
     <section className="py-20 relative overflow-hidden bg-slate-900">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/10 to-purple-900/10"></div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-on-scroll">
           <Badge variant="outline" className="mb-4 text-cyan-300 border-cyan-300/50">
@@ -90,11 +90,11 @@ export default function InteractiveStats() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 max-w-7xl mx-auto">
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
             const isHovered = hoveredStat === index;
-            
+
             return (
               <Card
                 key={stat.label}
@@ -106,12 +106,12 @@ export default function InteractiveStats() {
               >
                 {/* Animated background gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-5 transition-opacity duration-500 ${isHovered ? 'opacity-20' : ''}`}></div>
-                
+
                 <CardContent className="p-8 text-center">
                   <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-6 transform transition-transform duration-300 ${isHovered ? 'scale-110 rotate-6' : ''}`}>
                     <IconComponent className="w-10 h-10 text-white" />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <AnimatedCounter 
                       end={stat.number} 

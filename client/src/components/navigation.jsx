@@ -80,7 +80,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white p-2 z-50 relative"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -90,24 +90,26 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-t border-white/10">
-            <div className="px-6 py-4 space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`block py-2 transition-colors font-medium ${
-                    isActive(link.href)
-                      ? "text-[#d96c1e]"
-                      : "text-white hover:text-[#d96c1e]"
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+          <div className="md:hidden fixed top-0 left-0 right-0 bottom-0 bg-black/95 backdrop-blur-md z-40">
+            <div className="flex flex-col h-full pt-20 px-6 py-4">
+              <div className="flex-1 space-y-6">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`block py-3 text-lg transition-colors font-medium ${
+                      isActive(link.href)
+                        ? "text-[#d96c1e]"
+                        : "text-white hover:text-[#d96c1e]"
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full bg-friench-blue text-white hover:bg-friench-blue/90 mt-4">
+                <Button className="w-full bg-[#d96c1e] text-white hover:bg-[#d96c1e]/90 py-3 text-lg">
                   Contact Us
                 </Button>
               </Link>
