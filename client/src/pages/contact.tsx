@@ -162,8 +162,9 @@ export default function Contact() {
                       <div>
                         <h3 className="font-semibold text-white mb-2">Address</h3>
                         <p className="text-slate-300">
-                          MB-33 block C First floor Mansrovar Complex<br />
-                          Bhopal, M.P.- 462016
+                          MEZZANINE FLOOR, BLOCK - C<br />
+                          Mansarovar Complex MB 33<br />
+                          Bhopal, Madhya Pradesh - 462016
                         </p>
                       </div>
                     </div>
@@ -230,18 +231,40 @@ export default function Contact() {
                 </CardContent>
               </Card>
 
-              {/* Map Placeholder */}
+              {/* Google Maps Integration */}
               <Card className="shadow-lg mt-8 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover-card">
                 <CardContent className="p-4">
-                  <div className="w-full h-64 bg-gradient-to-br from-slate-700/50 to-slate-800/50 rounded-lg flex items-center justify-center border border-slate-600/30">
-                    <div className="text-center text-slate-300">
-                      <MapPin className="h-12 w-12 mx-auto mb-4 text-cyan-300" />
-                      <p className="font-semibold text-white">Interactive Map</p>
-                      <p className="text-sm text-slate-300">Google Maps Integration</p>
-                      <p className="text-xs mt-2 text-slate-400">
-                        MB-33 Mansrovar Complex, Bhopal
-                      </p>
+                  <div className="mb-4">
+                    <h3 className="text-lg font-semibold text-white mb-2">Find Us on Map</h3>
+                    <p className="text-sm text-slate-300">FrienchTech IT Solutions Office Location</p>
+                  </div>
+                  <div className="w-full h-64 rounded-lg overflow-hidden border border-slate-600/30">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.7089647297946!2d77.43360157533647!3d23.225017679078433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43007b764b37%3A0xa311223df1a9491d!2sFrienchTech%20It%20%3A%20Website%20Development%20%7C%20App%20Development!5e0!3m2!1sen!2sin!4v1722341234567!5m2!1sen!2sin"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="FrienchTech IT Solutions Location"
+                      className="rounded-lg"
+                    />
+                  </div>
+                  <div className="mt-4 flex justify-between items-center">
+                    <div className="text-xs text-slate-400">
+                      <p>MEZZANINE FLOOR, BLOCK - C</p>
+                      <p>Mansarovar Complex MB 33, Bhopal</p>
                     </div>
+                    <Button
+                      onClick={() => window.open('https://www.google.com/maps/dir//FrienchTech+It+:+Website+Development+%7C+App+Development+MEZZANINE+FLOOR,+BLOCK+-+C,+Mansarovar+Complex+MB+33+Bhopal,+Madhya+Pradesh+462016/@23.2250176,77.4356002,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x397c43007b764b37:0xa311223df1a9491d!2m2!1d77.4356002!2d23.2250176?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D', '_blank')}
+                      variant="outline"
+                      size="sm"
+                      className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border-cyan-500/50 text-cyan-300 hover:from-cyan-500 hover:to-blue-500 hover:text-white"
+                    >
+                      <MapPin className="mr-1 h-3 w-3" />
+                      Directions
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
