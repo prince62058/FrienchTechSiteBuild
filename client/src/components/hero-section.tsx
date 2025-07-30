@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Rocket, Zap, Globe } from "lucide-react";
-import EnhancedThreeScene from "./enhanced-three-scene";
+import ThreeSceneEnhanced from "./three-scene-enhanced";
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
 import heroVideo from "@assets/6036381_Keyboard_Laptop_3840x2160_1753162786293.mp4";
 
@@ -23,6 +23,9 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Enhanced 3D Background */}
+      <ThreeSceneEnhanced scrollProgress={scrollProgress} />
+      
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0 -z-10">
         <div className="animated-bg"></div>
