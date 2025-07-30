@@ -6,39 +6,48 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const useScrollAnimations = () => {
   useEffect(() => {
-    // Hero section animations
-    gsap.fromTo('.hero-title', 
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.2,
-        ease: 'power3.out',
-        stagger: 0.2
-      }
-    );
+    // Hero section animations - with defensive checks
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+      gsap.fromTo('.hero-title', 
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: 'power3.out',
+          stagger: 0.2
+        }
+      );
+    }
 
-    gsap.fromTo('.hero-description', 
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.5,
-        ease: 'power2.out'
-      }
-    );
+    const heroDescription = document.querySelector('.hero-description');
+    if (heroDescription) {
+      gsap.fromTo('.hero-description', 
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          delay: 0.5,
+          ease: 'power2.out'
+        }
+      );
+    }
 
-    gsap.fromTo('.hero-buttons', 
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        delay: 0.8,
-        ease: 'power2.out'
-      }
-    );
+    const heroButtons = document.querySelector('.hero-buttons');
+    if (heroButtons) {
+      gsap.fromTo('.hero-buttons', 
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          delay: 0.8,
+          ease: 'power2.out'
+        }
+      );
+    }
 
     // Scroll-triggered animations
     gsap.utils.toArray('.animate-on-scroll').forEach((element: any) => {
