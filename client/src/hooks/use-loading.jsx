@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react';
 
-interface UseLoadingProps {
-  initialLoading?: boolean;
-  delay?: number; // Minimum loading time in ms
-}
-
-export const useLoading = ({ initialLoading = true, delay = 1000 }: UseLoadingProps = {}) => {
+export const useLoading = ({ initialLoading = true, delay = 1000 } = {}) => {
   const [isLoading, setIsLoading] = useState(initialLoading);
   const [isReady, setIsReady] = useState(false);
 
@@ -41,8 +36,8 @@ export const useLoading = ({ initialLoading = true, delay = 1000 }: UseLoadingPr
 };
 
 // Simulate data loading for components
-export const useDataLoading = (dataLength: number = 6) => {
-  const [data, setData] = useState<any[]>([]);
+export const useDataLoading = (dataLength = 6) => {
+  const [data, setData] = useState([]);
   const { isLoading, isReady, stopLoading } = useLoading({ delay: 1500 });
 
   useEffect(() => {

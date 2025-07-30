@@ -1,10 +1,9 @@
-import type { Express } from "express";
-import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { insertContactSchema } from "@shared/schema";
+import { createServer } from "http";
+import { storage } from "./storage.js";
+import { insertContactSchema } from "../shared/schema.js";
 import { z } from "zod";
 
-export async function registerRoutes(app: Express): Promise<Server> {
+export async function registerRoutes(app) {
   // Contact form submission
   app.post("/api/contact", async (req, res) => {
     try {

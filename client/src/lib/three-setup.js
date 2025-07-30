@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-export const createParticleSystem = (count: number = 100) => {
+export const createParticleSystem = (count = 100) => {
   const particles = new THREE.BufferGeometry();
   const positions = new Float32Array(count * 3);
   const colors = new Float32Array(count * 3);
@@ -37,8 +37,8 @@ export const createParticleSystem = (count: number = 100) => {
   return new THREE.Points(particles, material);
 };
 
-export const createFloatingShapes = (count: number = 10) => {
-  const shapes: THREE.Mesh[] = [];
+export const createFloatingShapes = (count = 10) => {
+  const shapes = [];
   
   const geometries = [
     new THREE.BoxGeometry(0.5, 0.5, 0.5),
@@ -85,13 +85,13 @@ export const createFloatingShapes = (count: number = 10) => {
 };
 
 export const animateScene = (
-  renderer: THREE.WebGLRenderer,
-  scene: THREE.Scene,
-  camera: THREE.Camera,
-  particles: THREE.Points,
-  shapes: THREE.Mesh[]
+  renderer,
+  scene,
+  camera,
+  particles,
+  shapes
 ) => {
-  let animationId: number;
+  let animationId;
 
   const animate = () => {
     animationId = requestAnimationFrame(animate);

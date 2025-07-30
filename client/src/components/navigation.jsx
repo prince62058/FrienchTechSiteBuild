@@ -18,7 +18,7 @@ export default function Navigation() {
     { href: "/careers", label: "Careers" },
   ];
 
-  const isActive = (href: string) => {
+  const isActive = (href) => {
     if (href === "/" && location === "/") return true;
     if (href !== "/" && location.startsWith(href)) return true;
     return false;
@@ -73,15 +73,16 @@ export default function Navigation() {
             ))}
             <Link href="/contact">
               <Button className="bg-friench-blue text-white hover:bg-friench-blue/90">
-                Contact
+                Get Started
               </Button>
             </Link>
           </div>
-          
+
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white hover:text-[#d96c1e]"
+            className="md:hidden text-white p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -89,13 +90,13 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-transparent bg-transparent">
-            <div className="flex flex-col space-y-4 pt-4 px-4">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-t border-white/10">
+            <div className="px-6 py-4 space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`transition-colors font-medium ${
+                  className={`block py-2 transition-colors font-medium ${
                     isActive(link.href)
                       ? "text-[#d96c1e]"
                       : "text-white hover:text-[#d96c1e]"
@@ -106,8 +107,8 @@ export default function Navigation() {
                 </Link>
               ))}
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="bg-friench-blue text-white hover:bg-friench-blue/90 w-full">
-                  Contact
+                <Button className="w-full bg-friench-blue text-white hover:bg-friench-blue/90 mt-4">
+                  Get Started
                 </Button>
               </Link>
             </div>

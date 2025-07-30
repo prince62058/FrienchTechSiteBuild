@@ -50,7 +50,7 @@ export const useScrollAnimations = () => {
     }
 
     // Enhanced scroll-triggered animations for all elements
-    gsap.utils.toArray('.animate-on-scroll').forEach((element: any) => {
+    gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
       gsap.fromTo(element,
         { y: 100, opacity: 0 },
         {
@@ -69,7 +69,7 @@ export const useScrollAnimations = () => {
     });
 
     // Animate all cards with stagger effect
-    gsap.utils.toArray('.scroll-card, .hover-card, [class*="card"]').forEach((card: any, index) => {
+    gsap.utils.toArray('.scroll-card, .hover-card, [class*="card"]').forEach((card, index) => {
       gsap.fromTo(card,
         { 
           y: 60, 
@@ -96,7 +96,7 @@ export const useScrollAnimations = () => {
     });
 
     // Animate all headings with typewriter effect
-    gsap.utils.toArray('h1, h2, h3, h4, h5, h6').forEach((heading: any) => {
+    gsap.utils.toArray('h1, h2, h3, h4, h5, h6').forEach((heading) => {
       gsap.fromTo(heading,
         { 
           y: 40, 
@@ -119,7 +119,7 @@ export const useScrollAnimations = () => {
     });
 
     // Animate all paragraphs and text
-    gsap.utils.toArray('p, .text-content, .description').forEach((text: any, index) => {
+    gsap.utils.toArray('p, .text-content, .description').forEach((text, index) => {
       gsap.fromTo(text,
         { 
           y: 30, 
@@ -141,7 +141,7 @@ export const useScrollAnimations = () => {
     });
 
     // Animate buttons with bounce effect
-    gsap.utils.toArray('button, .btn, .button').forEach((button: any, index) => {
+    gsap.utils.toArray('button, .btn, .button').forEach((button, index) => {
       gsap.fromTo(button,
         { 
           scale: 0.8, 
@@ -165,7 +165,7 @@ export const useScrollAnimations = () => {
     });
 
     // Animate grid items with wave effect
-    gsap.utils.toArray('.grid > *, .grid-item').forEach((item: any, index) => {
+    gsap.utils.toArray('.grid > *, .grid-item').forEach((item, index) => {
       gsap.fromTo(item,
         { 
           y: 50, 
@@ -189,7 +189,7 @@ export const useScrollAnimations = () => {
     });
 
     // Animate icons with rotation
-    gsap.utils.toArray('.icon, [class*="icon"], svg').forEach((icon: any) => {
+    gsap.utils.toArray('.icon, [class*="icon"], svg').forEach((icon) => {
       gsap.fromTo(icon,
         { 
           scale: 0, 
@@ -212,7 +212,7 @@ export const useScrollAnimations = () => {
     });
 
     // Parallax effects
-    gsap.utils.toArray('.parallax-slow').forEach((element: any) => {
+    gsap.utils.toArray('.parallax-slow').forEach((element) => {
       gsap.to(element, {
         yPercent: -50,
         ease: 'none',
@@ -225,7 +225,7 @@ export const useScrollAnimations = () => {
       });
     });
 
-    gsap.utils.toArray('.parallax-fast').forEach((element: any) => {
+    gsap.utils.toArray('.parallax-fast').forEach((element) => {
       gsap.to(element, {
         yPercent: -100,
         ease: 'none',
@@ -239,7 +239,7 @@ export const useScrollAnimations = () => {
     });
 
     // Counter animations for statistics
-    gsap.utils.toArray('.counter').forEach((counter: any) => {
+    gsap.utils.toArray('.counter').forEach((counter) => {
       const target = parseInt(counter.textContent);
       const obj = { val: 0 };
       
@@ -259,7 +259,7 @@ export const useScrollAnimations = () => {
     });
 
     // Card hover animations
-    gsap.utils.toArray('.hover-card').forEach((card: any) => {
+    gsap.utils.toArray('.hover-card').forEach((card) => {
       const tl = gsap.timeline({ paused: true });
       
       tl.to(card, {
@@ -281,7 +281,7 @@ export const useScrollAnimations = () => {
 };
 
 export const useGSAPTimeline = () => {
-  const tl = useRef<gsap.core.Timeline | null>(null);
+  const tl = useRef(null);
 
   useEffect(() => {
     tl.current = gsap.timeline();
@@ -296,7 +296,7 @@ export const useGSAPTimeline = () => {
   return tl.current;
 };
 
-export const useCinematicTransition = (triggerElement: string) => {
+export const useCinematicTransition = (triggerElement) => {
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
