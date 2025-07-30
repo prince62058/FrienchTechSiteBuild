@@ -7,68 +7,53 @@ import { useScrollAnimations } from "@/hooks/use-scroll-animations";
 
 const pricingPlans = [
   {
-    name: "Starter",
-    description: "Perfect for small businesses and startups",
-    price: 25000,
-    period: "per project",
+    name: "IT Solutions",
+    description: "Starting from",
+    originalPrice: 18750,
+    price: 15000,
+    period: "",
     icon: Rocket,
     color: "from-blue-500 to-cyan-500",
-    badge: "Most Popular",
+    badge: "20% OFF",
     features: [
-      "Custom Website Development",
-      "Mobile Responsive Design",
-      "Basic SEO Optimization",
-      "3 Months Support",
-      "SSL Certificate",
-      "Contact Form Integration",
-      "Social Media Integration",
-      "Google Analytics Setup"
+      "IT Infrastructure Setup",
+      "Cloud Integration",
+      "Technical Consulting",
+      "24/7 Support"
     ],
     highlight: false
   },
   {
-    name: "Professional",
-    description: "Advanced solutions for growing businesses",
-    price: 75000,
-    period: "per project",
+    name: "Website Development",
+    description: "Starting from",
+    originalPrice: 25000,
+    price: 20000,
+    period: "",
     icon: Zap,
     color: "from-purple-500 to-pink-500",
-    badge: "Best Value",
+    badge: "20% OFF",
     features: [
-      "Everything in Starter",
-      "E-commerce Integration",
-      "Advanced SEO Package",
-      "6 Months Premium Support",
-      "Database Integration",
-      "Payment Gateway Setup",
-      "Admin Dashboard",
-      "Performance Optimization",
-      "Security Audit",
-      "Backup Solutions"
+      "Custom Web Design",
+      "Responsive Layout",
+      "SEO Friendly",
+      "1 Year Free Support"
     ],
     highlight: true
   },
   {
-    name: "Enterprise",
-    description: "Complete digital transformation package",
-    price: 150000,
-    period: "per project",
+    name: "App Development",
+    description: "Starting from",
+    originalPrice: 50000,
+    price: 40000,
+    period: "",
     icon: Crown,
     color: "from-yellow-500 to-orange-500",
-    badge: "Premium",
+    badge: "20% OFF",
     features: [
-      "Everything in Professional",
-      "Custom Software Development",
-      "AI/ML Integration",
-      "Cloud Infrastructure Setup",
-      "12 Months Enterprise Support",
-      "DevOps Implementation",
-      "Multi-platform Development",
-      "Advanced Analytics",
-      "24/7 Monitoring",
-      "Dedicated Project Manager",
-      "Training & Documentation",
-      "Scalability Planning"
+      "Android & iOS Apps",
+      "UI/UX Design",
+      "API Integration",
+      "Maintenance & Support"
     ],
     highlight: false
   }
@@ -99,12 +84,11 @@ export default function EnhancedPricing() {
           </Badge>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-cyan-300 to-purple-300 bg-clip-text text-transparent">
-              Investment Plans
+              Our Pricing Plans
             </span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Choose the perfect package for your digital transformation journey. 
-            All prices are in Indian Rupees with transparent, no-hidden-cost structure.
+            Choose the best plan for your business
           </p>
         </div>
 
@@ -151,10 +135,15 @@ export default function EnhancedPricing() {
                   </CardDescription>
                   
                   <div className="space-y-2">
+                    {plan.originalPrice && (
+                      <div className="text-lg text-slate-400 line-through">
+                        {formatPrice(plan.originalPrice)}
+                      </div>
+                    )}
                     <div className="text-4xl font-bold text-white">
                       {formatPrice(plan.price)}
                     </div>
-                    <div className="text-sm text-slate-400">{plan.period}</div>
+                    {plan.period && <div className="text-sm text-slate-400">{plan.period}</div>}
                   </div>
                 </CardHeader>
 
@@ -171,8 +160,9 @@ export default function EnhancedPricing() {
                   <Button 
                     className={`w-full bg-gradient-to-r ${plan.color} hover:opacity-90 text-white font-semibold py-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl`}
                     size="lg"
+                    onClick={() => window.location.href = '/contact'}
                   >
-                    Contact
+                    Get Started
                     <IconComponent className="ml-2 w-5 h-5" />
                   </Button>
                 </CardFooter>
