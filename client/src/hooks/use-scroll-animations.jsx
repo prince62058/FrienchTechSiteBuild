@@ -14,9 +14,9 @@ export const useScrollAnimations = () => {
         {
           y: 0,
           opacity: 1,
-          duration: 1.2,
+          duration: 0.6,
           ease: 'power3.out',
-          stagger: 0.2
+          stagger: 0.1
         }
       );
     }
@@ -28,8 +28,8 @@ export const useScrollAnimations = () => {
         {
           y: 0,
           opacity: 1,
-          duration: 1,
-          delay: 0.5,
+          duration: 0.5,
+          delay: 0.2,
           ease: 'power2.out'
         }
       );
@@ -42,8 +42,8 @@ export const useScrollAnimations = () => {
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          delay: 0.8,
+          duration: 0.4,
+          delay: 0.3,
           ease: 'power2.out'
         }
       );
@@ -56,7 +56,7 @@ export const useScrollAnimations = () => {
         {
           y: 0,
           opacity: 1,
-          duration: 1,
+          duration: 0.5,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: element,
@@ -82,7 +82,7 @@ export const useScrollAnimations = () => {
           opacity: 1,
           scale: 1,
           rotationX: 0,
-          duration: 0.8,
+          duration: 0.4,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: card,
@@ -107,7 +107,7 @@ export const useScrollAnimations = () => {
           y: 0,
           opacity: 1,
           clipPath: 'inset(0 0% 0 0)',
-          duration: 1,
+          duration: 0.5,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: heading,
@@ -128,7 +128,7 @@ export const useScrollAnimations = () => {
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.4,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: text,
@@ -152,7 +152,7 @@ export const useScrollAnimations = () => {
           scale: 1,
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.3,
           ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: button,
@@ -176,7 +176,7 @@ export const useScrollAnimations = () => {
           y: 0,
           opacity: 1,
           scale: 1,
-          duration: 0.7,
+          duration: 0.35,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: item,
@@ -200,7 +200,7 @@ export const useScrollAnimations = () => {
           scale: 1,
           rotation: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.4,
           ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: icon,
@@ -245,7 +245,7 @@ export const useScrollAnimations = () => {
       
       gsap.to(obj, {
         val: target,
-        duration: 2,
+        duration: 1,
         ease: 'power2.out',
         onUpdate: () => {
           counter.textContent = Math.round(obj.val);
@@ -266,7 +266,7 @@ export const useScrollAnimations = () => {
         y: -10,
         scale: 1.02,
         boxShadow: '0 20px 40px rgba(0,255,255,0.3)',
-        duration: 0.3,
+        duration: 0.15,
         ease: 'power2.out'
       });
 

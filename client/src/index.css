@@ -312,7 +312,7 @@
 }
 
 .float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 1.5s ease-in-out infinite;
 }
 
 /* Mobile optimizations */
@@ -389,11 +389,11 @@
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.4s ease-out forwards;
 }
 
 .animate-particle-float {
-  animation: particle-float 6s ease-in-out infinite;
+  animation: particle-float 3s ease-in-out infinite;
 }
 
 /* Three.js container */
@@ -434,7 +434,7 @@ html {
 .scroll-enter {
   opacity: 0;
   transform: translateY(60px) scale(0.95);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .scroll-enter-active {
@@ -446,7 +446,7 @@ html {
 .grid-item {
   opacity: 0;
   transform: translateY(40px) scale(0.9);
-  animation: gridSlideIn 0.6s ease-out forwards;
+  animation: gridSlideIn 0.3s ease-out forwards;
 }
 
 @keyframes gridSlideIn {
@@ -458,7 +458,7 @@ html {
 
 /* Icon Animations */
 .icon-bounce {
-  animation: iconBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation: iconBounce 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 @keyframes iconBounce {
@@ -481,7 +481,7 @@ html {
   overflow: hidden;
   border-right: 2px solid #3b82f6;
   white-space: nowrap;
-  animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+  animation: typing 1.5s steps(30) 0.5s forwards, blink 0.5s step-end infinite;
 }
 
 @keyframes typing {
@@ -495,7 +495,7 @@ html {
 
 /* Enhanced Card Hover Effects */
 .card-enhanced {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
 }
 
@@ -515,7 +515,7 @@ html {
 .reveal-up {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .reveal-up.in-view {
@@ -526,7 +526,7 @@ html {
 .reveal-scale {
   opacity: 0;
   transform: scale(0.8);
-  transition: all 0.5s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 .reveal-scale.in-view {
@@ -547,7 +547,7 @@ html {
 .animate-pulse {
   background: linear-gradient(90deg, #334155 25%, #475569 50%, #334155 75%);
   background-size: 200px 100%;
-  animation: skeleton-loading 1.5s infinite;
+  animation: skeleton-loading 0.8s infinite;
 }
 
 /* Dark theme skeleton colors */
