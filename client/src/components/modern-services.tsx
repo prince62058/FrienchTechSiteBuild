@@ -21,8 +21,6 @@ const services = [
     icon: Code,
     title: "Custom Software Development",
     description: "Tailored software solutions built with cutting-edge technologies",
-    price: "₹75,000",
-    period: "starting from",
     features: [
       "Full-stack Development",
       "Microservices Architecture",
@@ -37,8 +35,6 @@ const services = [
     icon: Smartphone,
     title: "Mobile App Development",
     description: "Native and cross-platform mobile applications",
-    price: "₹50,000",
-    period: "starting from",
     features: [
       "iOS & Android Apps",
       "React Native Development",
@@ -53,8 +49,6 @@ const services = [
     icon: Cloud,
     title: "Cloud Solutions",
     description: "Scalable cloud infrastructure and migration services",
-    price: "₹40,000",
-    period: "starting from",
     features: [
       "AWS/Azure/GCP Setup",
       "Cloud Migration",
@@ -69,8 +63,6 @@ const services = [
     icon: Brain,
     title: "AI & Machine Learning",
     description: "Intelligent solutions powered by artificial intelligence",
-    price: "₹1,50,000",
-    period: "starting from",
     features: [
       "Custom AI Models",
       "Data Analytics",
@@ -85,8 +77,6 @@ const services = [
     icon: Shield,
     title: "Cybersecurity Solutions",
     description: "Comprehensive security audits and protection systems",
-    price: "₹60,000",
-    period: "starting from",
     features: [
       "Security Audits",
       "Penetration Testing",
@@ -101,8 +91,6 @@ const services = [
     icon: Database,
     title: "Data Solutions",
     description: "Big data processing and database optimization",
-    price: "₹80,000",
-    period: "starting from",
     features: [
       "Database Design",
       "Data Warehousing",
@@ -184,13 +172,6 @@ export default function ModernServices() {
                 </CardHeader>
 
                 <CardContent className="space-y-4">
-                  <div className="border-t border-slate-700/50 pt-4">
-                    <div className="text-2xl font-bold text-cyan-300">
-                      {service.price}
-                    </div>
-                    <div className="text-sm text-slate-400">{service.period}</div>
-                  </div>
-
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-2">
@@ -203,7 +184,7 @@ export default function ModernServices() {
                   <Button 
                     className={`w-full bg-gradient-to-r ${service.color} hover:opacity-90 text-white font-semibold py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl mt-4`}
                   >
-                    Get Quote
+                    Learn More
                     <Globe className="ml-2 w-4 h-4" />
                   </Button>
                 </CardContent>
@@ -242,7 +223,7 @@ export default function ModernServices() {
               size="lg"
               className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25"
             >
-              Start Your Project
+              Discover Solutions
               <Rocket className="ml-2 w-5 h-5" />
             </Button>
           </div>
