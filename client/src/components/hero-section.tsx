@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Rocket, Zap, Globe } from "lucide-react";
 import ThreeSceneEnhanced from "./three-scene-enhanced";
+import AnimatedCounter from "./animated-counter";
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
 import heroVideo from "@assets/6036381_Keyboard_Laptop_3840x2160_1753162786293.mp4";
 
@@ -79,33 +80,47 @@ export default function HeroSection() {
             {/* Interactive statistics */}
             <div className="hero-description grid grid-cols-3 gap-6 py-6">
               <div className="text-center space-y-2">
-                <div className="counter text-3xl font-bold text-cyan-300">500</div>
-                <div className="text-sm text-blue-200">Projects Delivered</div>
+                <AnimatedCounter 
+                  end={500} 
+                  suffix="+" 
+                  className="text-2xl sm:text-3xl font-bold text-cyan-300"
+                />
+                <div className="text-xs sm:text-sm text-blue-200">Projects Delivered</div>
               </div>
               <div className="text-center space-y-2">
-                <div className="counter text-3xl font-bold text-purple-300">50</div>
-                <div className="text-sm text-blue-200">Global Clients</div>
+                <AnimatedCounter 
+                  end={50} 
+                  suffix="+" 
+                  className="text-2xl sm:text-3xl font-bold text-purple-300"
+                />
+                <div className="text-xs sm:text-sm text-blue-200">Global Clients</div>
               </div>
               <div className="text-center space-y-2">
-                <div className="counter text-3xl font-bold text-yellow-300">99</div>
-                <div className="text-sm text-blue-200">Success Rate %</div>
+                <AnimatedCounter 
+                  end={99} 
+                  suffix="%" 
+                  className="text-2xl sm:text-3xl font-bold text-yellow-300"
+                />
+                <div className="text-xs sm:text-sm text-blue-200">Success Rate</div>
               </div>
             </div>
             
             <div className="hero-buttons flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-xl hover-card transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25"
+                className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl hover-card transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25 w-full sm:w-auto"
+                onClick={() => window.location.href = '/contact'}
               >
                 Start Your Journey
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-2 border-cyan-300/50 text-cyan-300 hover:bg-cyan-300/10 hover:border-cyan-300 backdrop-blur-sm px-8 py-4 rounded-xl hover-card transition-all duration-300"
+                className="group border-2 border-cyan-300/50 text-cyan-300 hover:bg-cyan-300/10 hover:border-cyan-300 backdrop-blur-sm px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl hover-card transition-all duration-300 w-full sm:w-auto"
+                onClick={() => window.location.href = '/services'}
               >
-                <Globe className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+                <Globe className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:rotate-12 transition-transform" />
                 Explore Solutions
               </Button>
             </div>

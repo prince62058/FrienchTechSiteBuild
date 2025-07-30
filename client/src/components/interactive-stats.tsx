@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import AnimatedCounter from "./animated-counter";
 import { 
   Users, 
   Award, 
@@ -112,9 +113,11 @@ export default function InteractiveStats() {
                   </div>
                   
                   <div className="space-y-2">
-                    <div className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent counter`}>
-                      {stat.number}{stat.suffix}
-                    </div>
+                    <AnimatedCounter 
+                      end={stat.number} 
+                      suffix={stat.suffix}
+                      className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}
+                    />
                     <h3 className="text-xl font-bold text-white">
                       {stat.label}
                     </h3>

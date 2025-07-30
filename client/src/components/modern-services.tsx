@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import AnimatedCounter from "./animated-counter";
 import { 
   Code, 
   Smartphone, 
@@ -182,10 +183,11 @@ export default function ModernServices() {
                   </ul>
 
                   <Button 
-                    className={`w-full bg-gradient-to-r ${service.color} hover:opacity-90 text-white font-semibold py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl mt-4`}
+                    className={`w-full bg-gradient-to-r ${service.color} hover:opacity-90 text-white font-semibold py-2 sm:py-3 text-sm sm:text-base rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl mt-4`}
+                    onClick={() => window.location.href = '/services'}
                   >
                     Learn More
-                    <Globe className="ml-2 w-4 h-4" />
+                    <Globe className="ml-2 w-3 h-3 sm:w-4 sm:h-4" />
                   </Button>
                 </CardContent>
               </Card>
@@ -203,28 +205,45 @@ export default function ModernServices() {
             </p>
             <div className="grid md:grid-cols-4 gap-6 text-center mb-8">
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-cyan-300 counter">500</div>
+                <AnimatedCounter 
+                  end={500} 
+                  suffix="+" 
+                  className="text-2xl sm:text-3xl font-bold text-cyan-300"
+                />
                 <div className="text-sm text-slate-400">Projects Completed</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-purple-300 counter">50</div>
+                <AnimatedCounter 
+                  end={50} 
+                  suffix="+" 
+                  className="text-2xl sm:text-3xl font-bold text-purple-300"
+                />
                 <div className="text-sm text-slate-400">Happy Clients</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-yellow-300 counter">24</div>
+                <AnimatedCounter 
+                  end={24} 
+                  suffix="/7" 
+                  className="text-2xl sm:text-3xl font-bold text-yellow-300"
+                />
                 <div className="text-sm text-slate-400">Support Hours</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-green-300 counter">99</div>
-                <div className="text-sm text-slate-400">Success Rate %</div>
+                <AnimatedCounter 
+                  end={99} 
+                  suffix="%" 
+                  className="text-2xl sm:text-3xl font-bold text-green-300"
+                />
+                <div className="text-sm text-slate-400">Success Rate</div>
               </div>
             </div>
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25"
+              className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25 w-full sm:w-auto"
+              onClick={() => window.location.href = '/contact'}
             >
               Discover Solutions
-              <Rocket className="ml-2 w-5 h-5" />
+              <Rocket className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </div>
         </div>

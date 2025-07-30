@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import AnimatedCounter from "./animated-counter";
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
 
@@ -209,19 +210,39 @@ export default function TestimonialsSection() {
 
         {/* Quick Stats */}
         <div className="grid md:grid-cols-4 gap-6 mt-16 animate-on-scroll">
-          {[
-            { number: "500+", label: "Happy Clients", color: "text-cyan-300" },
-            { number: "99%", label: "Success Rate", color: "text-purple-300" },
-            { number: "₹100Cr+", label: "Client Savings", color: "text-yellow-300" },
-            { number: "24/7", label: "Support", color: "text-green-300" }
-          ].map((stat, index) => (
-            <div key={stat.label} className="text-center">
-              <div className={`text-3xl md:text-4xl font-bold ${stat.color} counter`}>
-                {stat.number}
-              </div>
-              <div className="text-slate-400 mt-2">{stat.label}</div>
-            </div>
-          ))}
+          <div className="text-center">
+            <AnimatedCounter 
+              end={500} 
+              suffix="+" 
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyan-300"
+            />
+            <div className="text-slate-400 mt-2">Happy Clients</div>
+          </div>
+          <div className="text-center">
+            <AnimatedCounter 
+              end={99} 
+              suffix="%" 
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-purple-300"
+            />
+            <div className="text-slate-400 mt-2">Success Rate</div>
+          </div>
+          <div className="text-center">
+            <AnimatedCounter 
+              end={100} 
+              prefix="₹" 
+              suffix="Cr+" 
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-300"
+            />
+            <div className="text-slate-400 mt-2">Client Savings</div>
+          </div>
+          <div className="text-center">
+            <AnimatedCounter 
+              end={24} 
+              suffix="/7" 
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-300"
+            />
+            <div className="text-slate-400 mt-2">Support</div>
+          </div>
         </div>
       </div>
     </section>

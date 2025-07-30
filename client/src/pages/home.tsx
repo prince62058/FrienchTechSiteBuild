@@ -204,19 +204,19 @@ export default function Home() {
               <Link href="/contact">
                 <Button 
                   size="lg" 
-                  className="group bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl hover-card transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25"
+                  className="group bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl hover-card transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25 w-full sm:w-auto"
                 >
                   Start Your Project
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link href="/projects">
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="group border-2 border-cyan-300/50 text-cyan-300 hover:bg-cyan-300/10 hover:border-cyan-300 backdrop-blur-sm px-8 py-4 rounded-xl hover-card transition-all duration-300"
+                  className="group border-2 border-cyan-300/50 text-cyan-300 hover:bg-cyan-300/10 hover:border-cyan-300 backdrop-blur-sm px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl hover-card transition-all duration-300 w-full sm:w-auto"
                 >
-                  <Users className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <Users className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform" />
                   View Our Work
                 </Button>
               </Link>

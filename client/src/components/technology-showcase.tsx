@@ -196,10 +196,11 @@ export default function TechnologyShowcase() {
                     delivering solutions that are scalable, secure, and performance-optimized.
                   </p>
                   <Button 
-                    className={`bg-gradient-to-r ${technologies[selectedTech].color} hover:opacity-90 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl`}
+                    className={`bg-gradient-to-r ${technologies[selectedTech].color} hover:opacity-90 text-white font-semibold px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto`}
+                    onClick={() => window.location.href = '/services'}
                   >
                     Learn More
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                   </Button>
                 </div>
               </div>
