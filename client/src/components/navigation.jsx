@@ -73,7 +73,7 @@ export default function Navigation() {
             ))}
             <Link href="/contact">
               <Button className="bg-friench-blue text-white hover:bg-friench-blue/90">
-                Contact
+                Contact Us
               </Button>
             </Link>
           </div>
@@ -108,7 +108,7 @@ export default function Navigation() {
               ))}
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button className="w-full bg-friench-blue text-white hover:bg-friench-blue/90 mt-4">
-                  Get Started
+                  Contact Us
                 </Button>
               </Link>
             </div>
