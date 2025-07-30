@@ -150,12 +150,13 @@ export default function Projects() {
                     {project.description}
                   </p>
                   <Button 
-                    variant="outline" 
-                    className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border-cyan-500/50 text-cyan-300 hover:from-cyan-500 hover:to-blue-500 hover:text-white transition-all duration-300 w-full group"
+                    className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 hover:from-purple-700 hover:via-pink-700 hover:to-orange-700 text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300 w-full group border-0"
                     onClick={() => window.open(project.link, '_blank')}
                   >
-                    View Project
-                    <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <span className="flex items-center justify-center gap-2">
+                      View Project
+                      <ExternalLink className="h-4 w-4 group-hover:translate-x-1 group-hover:rotate-12 transition-all duration-300" />
+                    </span>
                   </Button>
                 </CardContent>
               </Card>
