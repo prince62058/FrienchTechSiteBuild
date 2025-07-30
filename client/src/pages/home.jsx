@@ -4,6 +4,7 @@ import InteractiveStats from "@/components/interactive-stats";
 import TechnologyShowcase from "@/components/technology-showcase";
 import TestimonialsSection from "@/components/testimonials-section";
 import ModernServices from "@/components/modern-services";
+import Footer from "@/components/footer";
 
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
 import { Link } from "wouter";
@@ -210,6 +211,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
