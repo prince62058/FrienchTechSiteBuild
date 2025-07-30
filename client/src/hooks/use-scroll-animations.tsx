@@ -49,7 +49,7 @@ export const useScrollAnimations = () => {
       );
     }
 
-    // Scroll-triggered animations
+    // Enhanced scroll-triggered animations for all elements
     gsap.utils.toArray('.animate-on-scroll').forEach((element: any) => {
       gsap.fromTo(element,
         { y: 100, opacity: 0 },
@@ -62,6 +62,149 @@ export const useScrollAnimations = () => {
             trigger: element,
             start: 'top 80%',
             end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    });
+
+    // Animate all cards with stagger effect
+    gsap.utils.toArray('.scroll-card, .hover-card, [class*="card"]').forEach((card: any, index) => {
+      gsap.fromTo(card,
+        { 
+          y: 60, 
+          opacity: 0, 
+          scale: 0.95,
+          rotationX: 15
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          rotationX: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            end: 'bottom 15%',
+            toggleActions: 'play none none reverse'
+          },
+          delay: index * 0.1
+        }
+      );
+    });
+
+    // Animate all headings with typewriter effect
+    gsap.utils.toArray('h1, h2, h3, h4, h5, h6').forEach((heading: any) => {
+      gsap.fromTo(heading,
+        { 
+          y: 40, 
+          opacity: 0,
+          clipPath: 'inset(0 100% 0 0)'
+        },
+        {
+          y: 0,
+          opacity: 1,
+          clipPath: 'inset(0 0% 0 0)',
+          duration: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: heading,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    });
+
+    // Animate all paragraphs and text
+    gsap.utils.toArray('p, .text-content, .description').forEach((text: any, index) => {
+      gsap.fromTo(text,
+        { 
+          y: 30, 
+          opacity: 0 
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: text,
+            start: 'top 90%',
+            toggleActions: 'play none none reverse'
+          },
+          delay: index * 0.05
+        }
+      );
+    });
+
+    // Animate buttons with bounce effect
+    gsap.utils.toArray('button, .btn, .button').forEach((button: any, index) => {
+      gsap.fromTo(button,
+        { 
+          scale: 0.8, 
+          opacity: 0,
+          y: 20
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'back.out(1.7)',
+          scrollTrigger: {
+            trigger: button,
+            start: 'top 90%',
+            toggleActions: 'play none none reverse'
+          },
+          delay: index * 0.1
+        }
+      );
+    });
+
+    // Animate grid items with wave effect
+    gsap.utils.toArray('.grid > *, .grid-item').forEach((item: any, index) => {
+      gsap.fromTo(item,
+        { 
+          y: 50, 
+          opacity: 0,
+          scale: 0.9
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.7,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          },
+          delay: index * 0.15
+        }
+      );
+    });
+
+    // Animate icons with rotation
+    gsap.utils.toArray('.icon, [class*="icon"], svg').forEach((icon: any) => {
+      gsap.fromTo(icon,
+        { 
+          scale: 0, 
+          rotation: -180,
+          opacity: 0
+        },
+        {
+          scale: 1,
+          rotation: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'back.out(1.7)',
+          scrollTrigger: {
+            trigger: icon,
+            start: 'top 90%',
             toggleActions: 'play none none reverse'
           }
         }

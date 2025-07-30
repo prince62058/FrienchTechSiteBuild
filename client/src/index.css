@@ -383,3 +383,107 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(220.9, 89.2%, 50.8%);
 }
+
+/* Enhanced Scroll Animations */
+.scroll-enter {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Grid Item Animations */
+.grid-item {
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  animation: gridSlideIn 0.6s ease-out forwards;
+}
+
+@keyframes gridSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Icon Animations */
+.icon-bounce {
+  animation: iconBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes iconBounce {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Text Typewriter Effect */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #3b82f6;
+  white-space: nowrap;
+  animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Enhanced Card Hover Effects */
+.card-enhanced {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.card-enhanced:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+/* Stagger Animation for Multiple Elements */
+.stagger-animation {
+  animation-delay: calc(var(--stagger-index, 0) * 0.1s);
+}
+
+/* Smooth reveal animations */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.5s ease-out;
+}
+
+.reveal-scale.in-view {
+  opacity: 1;
+  transform: scale(1);
+}

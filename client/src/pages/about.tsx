@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedCounter from "@/components/animated-counter";
+import { useScrollAnimations } from "@/hooks/use-scroll-animations";
 import { 
   Code, 
   Cpu, 
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 
 export default function About() {
+  useScrollAnimations();
   const technologies = [
     { name: "Java", icon: Coffee, color: "text-orange-600", bgColor: "bg-orange-100" },
     { name: "Spring Boot", icon: Zap, color: "text-green-600", bgColor: "bg-green-100" },
@@ -32,10 +34,10 @@ export default function About() {
       {/* Hero Section */}
       <section className="py-20 hero-gradient text-white">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="hero-title text-5xl md:text-6xl font-bold mb-6">
             Commitment to Excellence and Customer Satisfaction
           </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="hero-description text-xl text-blue-100 max-w-3xl mx-auto">
             Innovation at the heart of everything we do
           </p>
         </div>
@@ -49,12 +51,12 @@ export default function About() {
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                 alt="Diverse tech team collaborating in modern office space" 
-                className="rounded-xl shadow-lg w-full h-auto animate-fade-in-up" 
+                className="rounded-xl shadow-lg w-full h-auto scroll-card hover-card" 
               />
             </div>
             
-            <div className="animate-fade-in-up">
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">
+            <div className="scroll-card">
+              <h2 className="text-4xl font-bold text-gray-800 mb-6 animate-on-scroll">
                 Innovative Solution of Software & Hardware
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
@@ -72,20 +74,20 @@ export default function About() {
               
               {/* Statistics */}
               <div className="grid grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-friench-blue mb-2">
+                <div className="text-center scroll-card">
+                  <div className="text-3xl font-bold text-friench-blue mb-2 counter">
                     <AnimatedCounter end={100} suffix="+" />
                   </div>
                   <p className="text-gray-600 font-medium">Satisfied Clients</p>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-friench-blue mb-2">
+                <div className="text-center scroll-card">
+                  <div className="text-3xl font-bold text-friench-blue mb-2 counter">
                     <AnimatedCounter end={100} suffix="+" />
                   </div>
                   <p className="text-gray-600 font-medium">Projects Completed</p>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-friench-blue mb-2">
+                <div className="text-center scroll-card">
+                  <div className="text-3xl font-bold text-friench-blue mb-2 counter">
                     <AnimatedCounter end={10} suffix="+" />
                   </div>
                   <p className="text-gray-600 font-medium">Projects Launched</p>
@@ -99,7 +101,7 @@ export default function About() {
       {/* Technology Stack */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-on-scroll">
             <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Technology Stack</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We leverage cutting-edge technologies to deliver robust and scalable solutions
@@ -112,10 +114,10 @@ export default function About() {
               return (
                 <div 
                   key={tech.name} 
-                  className="text-center group hover:transform hover:scale-105 transition-all duration-300"
+                  className="text-center group hover:transform hover:scale-105 transition-all duration-300 scroll-card grid-item"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className={`w-16 h-16 mx-auto mb-4 ${tech.bgColor} rounded-lg flex items-center justify-center group-hover:shadow-lg transition-all`}>
+                  <div className={`w-16 h-16 mx-auto mb-4 ${tech.bgColor} rounded-lg flex items-center justify-center group-hover:shadow-lg transition-all icon`}>
                     <IconComponent className={`${tech.color} h-8 w-8`} />
                   </div>
                   <h4 className="font-semibold text-gray-800">{tech.name}</h4>
@@ -126,7 +128,7 @@ export default function About() {
 
           {/* Technology Descriptions */}
           <div className="mt-20 grid md:grid-cols-2 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow scroll-card hover-card">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Frontend Technologies</h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -137,7 +139,7 @@ export default function About() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow scroll-card hover-card">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Backend Development</h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -148,7 +150,7 @@ export default function About() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow scroll-card hover-card">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Database & Storage</h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -159,7 +161,7 @@ export default function About() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow scroll-card hover-card">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Cloud & DevOps</h3>
                 <p className="text-gray-600 leading-relaxed">
