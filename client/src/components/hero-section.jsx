@@ -79,11 +79,11 @@ export default function HeroSection() {
       </div>
 
       {/* Enhanced gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-blue-900/60 to-purple-900/70 z-1"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-blue-900/60 to-blue-800/70 z-1"></div>
 
       {/* Cinematic particles overlay */}
       <div className="absolute inset-0 z-2">
-        <div className="cinematic-overlay opacity-30 bg-gradient-to-r from-cyan-500/20 to-purple-500/20"></div>
+        <div className="cinematic-overlay opacity-30 bg-gradient-to-r from-cyan-500/20 to-blue-500/20"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -96,7 +96,7 @@ export default function HeroSection() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-sky-300 bg-clip-text text-transparent">
                   Future-Ready
                 </span>
                 <br />
@@ -127,7 +127,7 @@ export default function HeroSection() {
                 <AnimatedCounter 
                   end={50} 
                   suffix="+" 
-                  className="text-2xl sm:text-3xl font-bold text-purple-300"
+                  className="text-2xl sm:text-3xl font-bold text-sky-300"
                 />
                 <div className="text-xs sm:text-sm text-blue-200">Global Clients</div>
               </div>
@@ -172,7 +172,7 @@ export default function HeroSection() {
                 ISO Certified
               </div>
               <div className="flex items-center gap-2 text-sm text-blue-200">
-                <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                 Global Delivery
               </div>
             </div>
@@ -183,12 +183,12 @@ export default function HeroSection() {
             <div className="relative w-96 h-96">
               {/* Animated rings */}
               <div className="absolute inset-0 border-2 border-cyan-500/30 rounded-full animate-spin [animation-duration:20s]"></div>
-              <div className="absolute inset-4 border-2 border-purple-500/30 rounded-full animate-spin [animation-duration:15s] [animation-direction:reverse]"></div>
+              <div className="absolute inset-4 border-2 border-blue-500/30 rounded-full animate-spin [animation-duration:15s] [animation-direction:reverse]"></div>
               <div className="absolute inset-8 border-2 border-yellow-500/30 rounded-full animate-spin [animation-duration:10s]"></div>
 
               {/* Central logo/icon */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl hover-card">
+                <div className="w-32 h-32 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-2xl hover-card"></div>
                   <Rocket className="w-16 h-16 text-white animate-pulse" />
                 </div>
               </div>
