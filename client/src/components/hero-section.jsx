@@ -188,7 +188,7 @@ export default function HeroSection() {
 
               {/* Central logo/icon */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-2xl hover-card"></div>
+                <div className="w-32 h-32 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-2xl hover-card">
                   <Rocket className="w-16 h-16 text-white animate-pulse" />
                 </div>
               </div>
