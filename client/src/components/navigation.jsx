@@ -26,21 +26,8 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent overflow-hidden">
-      {/* Video Background for Navigation */}
-      <div className="absolute inset-0 opacity-20">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover scale-110"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
-      </div>
-      
       {/* Gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
       
       <div className="container mx-auto px-6 py-4 relative z-10">
         <div className="flex items-center justify-between">

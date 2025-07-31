@@ -12,10 +12,10 @@ export default function HeroSection() {
 
   // Hero images array
   const heroImages = [
-    '/images/hero-1.jpg',
-    '/images/hero-2.jpg', 
-    '/images/hero-3.jpg',
-    '/images/hero-4.jpg'
+    '/attached_assets/group-people-working-website-template_1753935835419.jpg',
+    '/attached_assets/innovative-futuristic-classroom-students_1753935835418.jpg',
+    '/attached_assets/programming-background-with-person-working-with-codes-computer_1753935835418.jpg',
+    '/attached_assets/person-working-html-computer_1753935835418.jpg'
   ];
 
   useEffect(() => {
