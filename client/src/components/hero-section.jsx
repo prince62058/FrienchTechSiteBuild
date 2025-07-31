@@ -73,17 +73,7 @@ export default function HeroSection() {
                 Next-Gen Technology Solutions
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-sky-600 bg-clip-text text-transparent">
-                  Future-Ready
-                </span>
-                <br />
-                <span className="text-gray-900">IT Solutions</span>
-                <br />
-                <span className="bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent">
-                  & Innovation
-                </span>
-              </h1>
+
             </div>
 
 
