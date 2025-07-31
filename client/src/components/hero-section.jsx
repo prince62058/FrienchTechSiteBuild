@@ -67,14 +67,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="relative min-h-screen py-20">
           <div className="text-white space-y-8 cinematic-content text-center max-w-4xl mx-auto flex items-center justify-center min-h-screen">
-            <div className="hero-title space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30 text-white text-xs sm:text-sm font-medium">
-                <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
-                Next-Gen Technology Solutions
-              </div>
 
-
-            </div>
 
 
 
@@ -85,6 +78,14 @@ export default function HeroSection() {
           
           {/* Bottom center positioned elements */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 space-y-4">
+            {/* Badge moved to bottom */}
+            <div className="flex justify-center">
+              <div className="inline-flex items-center gap-2 px-3 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30 text-white text-xs sm:text-sm font-medium">
+                <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
+                Next-Gen Technology Solutions
+              </div>
+            </div>
+            
             <div className="hero-buttons flex flex-col gap-3 items-center">
               <Button 
                 size="lg" 
