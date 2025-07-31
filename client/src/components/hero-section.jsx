@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Rocket, Zap, Globe } from "lucide-react";
-import ThreeSceneEnhanced from "./three-scene-enhanced";
+
 import AnimatedCounter from "./animated-counter";
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
 
@@ -61,54 +61,32 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* Enhanced 3D Background (keeping for particles) */}
-      <ThreeSceneEnhanced scrollProgress={scrollProgress} />
-
-      {/* Enhanced Animated Background */}
-      <div className="absolute inset-0 -z-5">
-        <div className="particles-container">
-          {Array.from({ length: 30 }).map((_, i) => (
-            <div key={i} className="particle" style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 20}s`,
-              animationDuration: `${15 + Math.random() * 10}s`
-            }}></div>
-          ))}
-        </div>
-      </div>
-
-      {/* Enhanced gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-blue-900/60 to-blue-800/70 z-1"></div>
-
-      {/* Cinematic particles overlay */}
-      <div className="absolute inset-0 z-2">
-        <div className="cinematic-overlay opacity-30 bg-gradient-to-r from-cyan-500/20 to-blue-500/20"></div>
-      </div>
+      {/* Light overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-gray-100/80 to-blue-50/70 z-1"></div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
-          <div className="text-white space-y-8 cinematic-content">
+          <div className="text-gray-900 space-y-8 cinematic-content">
             <div className="hero-title space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-2 bg-cyan-500/20 backdrop-blur-sm rounded-full border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-2 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/30 text-blue-600 text-xs sm:text-sm font-medium">
                 <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
                 Next-Gen Technology Solutions
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-sky-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-sky-600 bg-clip-text text-transparent">
                   Future-Ready
                 </span>
                 <br />
-                <span className="text-white">IT Solutions</span>
+                <span className="text-gray-900">IT Solutions</span>
                 <br />
-                <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent">
                   & Innovation
                 </span>
               </h1>
             </div>
 
-            <p className="hero-description text-xl md:text-2xl text-blue-100 leading-relaxed max-w-2xl">
+            <p className="hero-description text-xl md:text-2xl text-gray-700 leading-relaxed max-w-2xl">
               Transform your business with cutting-edge software development, AI-powered solutions, 
               and revolutionary hardware integration. Experience the future of technology today.
             </p>
@@ -119,32 +97,32 @@ export default function HeroSection() {
                 <AnimatedCounter 
                   end={500} 
                   suffix="+" 
-                  className="text-2xl sm:text-3xl font-bold text-cyan-300"
+                  className="text-2xl sm:text-3xl font-bold text-cyan-600"
                 />
-                <div className="text-xs sm:text-sm text-blue-200">Projects Delivered</div>
+                <div className="text-xs sm:text-sm text-gray-600">Projects Delivered</div>
               </div>
               <div className="text-center space-y-2">
                 <AnimatedCounter 
                   end={50} 
                   suffix="+" 
-                  className="text-2xl sm:text-3xl font-bold text-sky-300"
+                  className="text-2xl sm:text-3xl font-bold text-sky-600"
                 />
-                <div className="text-xs sm:text-sm text-blue-200">Global Clients</div>
+                <div className="text-xs sm:text-sm text-gray-600">Global Clients</div>
               </div>
               <div className="text-center space-y-2">
                 <AnimatedCounter 
                   end={99} 
                   suffix="%" 
-                  className="text-2xl sm:text-3xl font-bold text-yellow-300"
+                  className="text-2xl sm:text-3xl font-bold text-orange-500"
                 />
-                <div className="text-xs sm:text-sm text-blue-200">Success Rate</div>
+                <div className="text-xs sm:text-sm text-gray-600">Success Rate</div>
               </div>
             </div>
 
             <div className="hero-buttons flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl hover-card transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25 w-full sm:w-auto"
+                className="group bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl hover-card transition-all duration-300 shadow-lg hover:shadow-blue-500/25 w-full sm:w-auto"
                 onClick={() => window.location.href = '/contact'}
               >
                 Start Your Journey
@@ -153,7 +131,7 @@ export default function HeroSection() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-2 border-cyan-300/50 text-cyan-300 hover:bg-cyan-300/10 hover:border-cyan-300 backdrop-blur-sm px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl hover-card transition-all duration-300 w-full sm:w-auto"
+                className="group border-2 border-blue-500/50 text-blue-600 hover:bg-blue-500/10 hover:border-blue-500 backdrop-blur-sm px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl hover-card transition-all duration-300 w-full sm:w-auto"
                 onClick={() => window.location.href = '/services'}
               >
                 <Globe className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:rotate-12 transition-transform" />
@@ -163,33 +141,28 @@ export default function HeroSection() {
 
             {/* Trust indicators */}
             <div className="hero-description flex items-center gap-6 pt-6 opacity-75">
-              <div className="flex items-center gap-2 text-sm text-blue-200">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 24/7 Support
               </div>
-              <div className="flex items-center gap-2 text-sm text-blue-200">
-                <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
                 ISO Certified
               </div>
-              <div className="flex items-center gap-2 text-sm text-blue-200">
-                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                 Global Delivery
               </div>
             </div>
           </div>
 
-          {/* Interactive 3D elements showcase */}
+          {/* Simple visual element */}
           <div className="hidden lg:flex items-center justify-center relative">
             <div className="relative w-96 h-96">
-              {/* Animated rings */}
-              <div className="absolute inset-0 border-2 border-cyan-500/30 rounded-full animate-spin [animation-duration:20s]"></div>
-              <div className="absolute inset-4 border-2 border-blue-500/30 rounded-full animate-spin [animation-duration:15s] [animation-direction:reverse]"></div>
-              <div className="absolute inset-8 border-2 border-yellow-500/30 rounded-full animate-spin [animation-duration:10s]"></div>
-
-              {/* Central logo/icon */}
+              {/* Simple logo/icon */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-2xl hover-card">
-                  <Rocket className="w-16 h-16 text-white animate-pulse" />
+                <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg">
+                  <Rocket className="w-16 h-16 text-white" />
                 </div>
               </div>
             </div>
