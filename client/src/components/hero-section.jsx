@@ -78,33 +78,7 @@ export default function HeroSection() {
 
 
 
-            {/* Interactive statistics */}
-            <div className="hero-description grid grid-cols-3 gap-6 py-6">
-              <div className="text-center space-y-2">
-                <AnimatedCounter 
-                  end={500} 
-                  suffix="+" 
-                  className="text-2xl sm:text-3xl font-bold text-cyan-300"
-                />
-                <div className="text-xs sm:text-sm text-white/90">Projects Delivered</div>
-              </div>
-              <div className="text-center space-y-2">
-                <AnimatedCounter 
-                  end={50} 
-                  suffix="+" 
-                  className="text-2xl sm:text-3xl font-bold text-sky-300"
-                />
-                <div className="text-xs sm:text-sm text-white/90">Global Clients</div>
-              </div>
-              <div className="text-center space-y-2">
-                <AnimatedCounter 
-                  end={99} 
-                  suffix="%" 
-                  className="text-2xl sm:text-3xl font-bold text-orange-300"
-                />
-                <div className="text-xs sm:text-sm text-white/90">Success Rate</div>
-              </div>
-            </div>
+
 
             <div className="hero-buttons flex flex-col sm:flex-row gap-4">
               <Button 
