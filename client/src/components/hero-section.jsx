@@ -65,8 +65,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-black/10 to-transparent z-1"></div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="flex items-center justify-center min-h-screen py-20">
-          <div className="text-white space-y-8 cinematic-content text-center max-w-4xl">
+        <div className="relative min-h-screen py-20">
+          <div className="text-white space-y-8 cinematic-content text-center max-w-4xl mx-auto flex items-center justify-center min-h-screen">
             <div className="hero-title space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30 text-white text-xs sm:text-sm font-medium">
                 <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -80,28 +80,33 @@ export default function HeroSection() {
 
 
 
-            <div className="hero-buttons flex flex-col sm:flex-row gap-4">
+
+          </div>
+          
+          {/* Bottom left positioned elements */}
+          <div className="absolute bottom-8 left-8 space-y-4">
+            <div className="hero-buttons flex flex-col gap-3">
               <Button 
                 size="lg" 
-                className="group bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl hover-card transition-all duration-300 shadow-lg hover:shadow-blue-500/25 w-full sm:w-auto"
+                className="group bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold px-6 py-3 text-sm rounded-xl hover-card transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
                 onClick={() => window.location.href = '/contact'}
               >
                 Start Your Journey
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-2 border-blue-500/50 text-blue-600 hover:bg-blue-500/10 hover:border-blue-500 backdrop-blur-sm px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl hover-card transition-all duration-300 w-full sm:w-auto"
+                className="group border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm px-6 py-3 text-sm rounded-xl hover-card transition-all duration-300"
                 onClick={() => window.location.href = '/services'}
               >
-                <Globe className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:rotate-12 transition-transform" />
+                <Globe className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
                 Explore Solutions
               </Button>
             </div>
 
             {/* Trust indicators */}
-            <div className="hero-description flex items-center gap-6 pt-6 opacity-75">
+            <div className="flex items-center gap-4 pt-2 opacity-75">
               <div className="flex items-center gap-2 text-sm text-white/90">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 24/7 Support
@@ -116,7 +121,6 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-
 
         </div>
       </div>
