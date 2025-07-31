@@ -83,9 +83,9 @@ export default function HeroSection() {
 
           </div>
           
-          {/* Bottom left positioned elements */}
-          <div className="absolute bottom-8 left-8 space-y-4">
-            <div className="hero-buttons flex flex-col gap-3">
+          {/* Bottom center positioned elements */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 space-y-4">
+            <div className="hero-buttons flex flex-col gap-3 items-center">
               <Button 
                 size="lg" 
                 className="group bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold px-6 py-3 text-sm rounded-xl hover-card transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
@@ -106,7 +106,7 @@ export default function HeroSection() {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex items-center gap-4 pt-2 opacity-75">
+            <div className="flex items-center justify-center gap-4 pt-2 opacity-75">
               <div className="flex items-center gap-2 text-sm text-white/90">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 24/7 Support
