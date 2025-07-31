@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/Feiechtechlogo(copy)_1753162037206.png";
+const logoImage = "/images/Feiechtechlogo(copy)_1753162037206.png";
 import heroVideo from "@assets/6036381_Keyboard_Laptop_3840x2160_1753162786293.mp4";
 
 export default function Navigation() {
