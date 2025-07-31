@@ -86,10 +86,7 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            <p className="hero-description text-xl md:text-2xl text-white leading-relaxed max-w-2xl">
-              Transform your business with cutting-edge software development, AI-powered solutions, 
-              and revolutionary hardware integration. Experience the future of technology today.
-            </p>
+
 
             {/* Interactive statistics */}
             <div className="hero-description grid grid-cols-3 gap-6 py-6">
