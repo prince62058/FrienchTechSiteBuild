@@ -4,11 +4,19 @@ import { ArrowRight, Rocket, Zap, Globe } from "lucide-react";
 import ThreeSceneEnhanced from "./three-scene-enhanced";
 import AnimatedCounter from "./animated-counter";
 import { useScrollAnimations } from "@/hooks/use-scroll-animations";
-import heroVideo from "@assets/6036381_Keyboard_Laptop_3840x2160_1753162786293.mp4";
 
 export default function HeroSection() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   useScrollAnimations();
+
+  // Hero images array
+  const heroImages = [
+    '/images/hero-1.jpg',
+    '/images/hero-2.jpg', 
+    '/images/hero-3.jpg',
+    '/images/hero-4.jpg'
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,16 +30,44 @@ export default function HeroSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Image slider effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % heroImages.length
+      );
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Enhanced 3D Background */}
+      {/* Image Slider Background */}
+      <div className="absolute inset-0 -z-10">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img
+              src={image}
+              alt={`Hero background ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Enhanced 3D Background (keeping for particles) */}
       <ThreeSceneEnhanced scrollProgress={scrollProgress} />
 
       {/* Enhanced Animated Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="animated-bg"></div>
+      <div className="absolute inset-0 -z-5">
         <div className="particles-container">
-          {Array.from({ length: 50 }).map((_, i) => (
+          {Array.from({ length: 30 }).map((_, i) => (
             <div key={i} className="particle" style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -42,12 +78,12 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Animated gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-blue-900/30 to-purple-900/50 z-1"></div>
+      {/* Enhanced gradient overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-blue-900/60 to-purple-900/70 z-1"></div>
 
       {/* Cinematic particles overlay */}
       <div className="absolute inset-0 z-2">
-        <div className="cinematic-overlay opacity-20 bg-gradient-to-r from-cyan-500/10 to-purple-500/10"></div>
+        <div className="cinematic-overlay opacity-30 bg-gradient-to-r from-cyan-500/20 to-purple-500/20"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -158,6 +194,23 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Image Slider Indicators */}
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="flex gap-3">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? 'bg-cyan-400 shadow-lg shadow-cyan-400/50' 
+                  : 'bg-white/30 hover:bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </div>
 
