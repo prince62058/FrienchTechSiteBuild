@@ -29,7 +29,7 @@ export default function Home() {
   useScrollAnimations();
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="min-h-screen">
       <HeroSection />
 
       {/* Interactive Stats */}
@@ -39,8 +39,8 @@ export default function Home() {
       <TechnologyShowcase />
 
       {/* Why Choose Us Section */}
-      <section className="py-20 relative overflow-hidden bg-gray-50">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50/20 to-cyan-50/20"></div>
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-black/5 to-transparent"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16 animate-on-scroll">

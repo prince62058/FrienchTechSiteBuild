@@ -61,14 +61,14 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* Light overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-gray-100/80 to-blue-50/70 z-1"></div>
+      {/* Transparent overlay for text readability without blocking background images */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-black/10 to-transparent z-1"></div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
-          <div className="text-gray-900 space-y-8 cinematic-content">
+          <div className="text-white space-y-8 cinematic-content">
             <div className="hero-title space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-2 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/30 text-blue-600 text-xs sm:text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30 text-white text-xs sm:text-sm font-medium">
                 <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
                 Next-Gen Technology Solutions
               </div>
@@ -86,7 +86,7 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            <p className="hero-description text-xl md:text-2xl text-gray-700 leading-relaxed max-w-2xl">
+            <p className="hero-description text-xl md:text-2xl text-white leading-relaxed max-w-2xl">
               Transform your business with cutting-edge software development, AI-powered solutions, 
               and revolutionary hardware integration. Experience the future of technology today.
             </p>
@@ -97,25 +97,25 @@ export default function HeroSection() {
                 <AnimatedCounter 
                   end={500} 
                   suffix="+" 
-                  className="text-2xl sm:text-3xl font-bold text-cyan-600"
+                  className="text-2xl sm:text-3xl font-bold text-cyan-300"
                 />
-                <div className="text-xs sm:text-sm text-gray-600">Projects Delivered</div>
+                <div className="text-xs sm:text-sm text-white/90">Projects Delivered</div>
               </div>
               <div className="text-center space-y-2">
                 <AnimatedCounter 
                   end={50} 
                   suffix="+" 
-                  className="text-2xl sm:text-3xl font-bold text-sky-600"
+                  className="text-2xl sm:text-3xl font-bold text-sky-300"
                 />
-                <div className="text-xs sm:text-sm text-gray-600">Global Clients</div>
+                <div className="text-xs sm:text-sm text-white/90">Global Clients</div>
               </div>
               <div className="text-center space-y-2">
                 <AnimatedCounter 
                   end={99} 
                   suffix="%" 
-                  className="text-2xl sm:text-3xl font-bold text-orange-500"
+                  className="text-2xl sm:text-3xl font-bold text-orange-300"
                 />
-                <div className="text-xs sm:text-sm text-gray-600">Success Rate</div>
+                <div className="text-xs sm:text-sm text-white/90">Success Rate</div>
               </div>
             </div>
 
@@ -141,16 +141,16 @@ export default function HeroSection() {
 
             {/* Trust indicators */}
             <div className="hero-description flex items-center gap-6 pt-6 opacity-75">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <div className="flex items-center gap-2 text-sm text-white/90">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 24/7 Support
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
+              <div className="flex items-center gap-2 text-sm text-white/90">
+                <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
                 ISO Certified
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <div className="flex items-center gap-2 text-sm text-white/90">
+                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                 Global Delivery
               </div>
             </div>
