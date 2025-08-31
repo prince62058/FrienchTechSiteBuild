@@ -37,7 +37,7 @@ export default function Navigation() {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 overflow-hidden ${
       isScrolled 
-        ? 'bg-white/90 border-b border-gray-200 shadow-sm' 
+        ? 'bg-blue-900/95 border-b border-blue-800 shadow-lg' 
         : 'bg-transparent'
     }`}>
       
@@ -51,7 +51,7 @@ export default function Navigation() {
             />
             <span className="text-2xl font-bold">
               <span className="text-[#d96c1e] font-medium">Friench</span>
-              <span className={isScrolled ? "text-gray-800" : "text-white"}>Tech</span>
+              <span className="text-white">Tech</span>
             </span>
           </Link>
           
@@ -64,9 +64,7 @@ export default function Navigation() {
                 className={`transition-colors font-medium ${
                   isActive(link.href)
                     ? "text-[#d96c1e]"
-                    : isScrolled 
-                      ? "text-gray-800 hover:text-[#d96c1e]"
-                      : "text-white hover:text-[#d96c1e]"
+                    : "text-white hover:text-[#d96c1e]"
                 }`}
               >
                 {link.label}
@@ -81,9 +79,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 z-50 relative transition-colors ${
-              isScrolled ? "text-gray-800" : "text-white"
-            }`}
+            className="md:hidden text-white p-2 z-50 relative"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
