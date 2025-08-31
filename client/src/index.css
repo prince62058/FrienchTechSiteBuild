@@ -373,6 +373,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Stable footer - no animations */
+footer {
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+footer * {
+  transform: none !important;
+  animation: none !important;
+  transition: color 0.15s ease, background-color 0.15s ease !important;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

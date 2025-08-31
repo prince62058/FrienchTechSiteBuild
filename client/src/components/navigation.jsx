@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Code } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/contexts/theme-context";
 const logoImage = "/images/Feiechtechlogo(copy)_1753162037206.png";
 import heroVideo from "@assets/6036381_Keyboard_Laptop_3840x2160_1753162786293.mp4";
 
@@ -40,7 +41,7 @@ export default function Navigation() {
         ? 'bg-gray-800 border-b border-gray-700 shadow-lg' 
         : 'bg-transparent'
     }`}>
-      
+
       <div className="container mx-auto px-6 py-4 relative z-10">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
@@ -54,7 +55,7 @@ export default function Navigation() {
               <span className="text-white">Tech</span>
             </span>
           </Link>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
