@@ -25,9 +25,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent overflow-hidden">
-      {/* Gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
+    <nav className="fixed top-0 w-full z-50 transition-all duration-300 bg-white/10 backdrop-blur-md border-b border-white/20 overflow-hidden">
       
       <div className="container mx-auto px-6 py-4 relative z-10">
         <div className="flex items-center justify-between">
@@ -39,7 +37,7 @@ export default function Navigation() {
             />
             <span className="text-2xl font-bold">
               <span className="text-[#d96c1e] font-medium">Friench</span>
-              <span className="text-white">Tech</span>
+              <span className="text-gray-800">Tech</span>
             </span>
           </Link>
           
@@ -52,14 +50,14 @@ export default function Navigation() {
                 className={`transition-colors font-medium ${
                   isActive(link.href)
                     ? "text-[#d96c1e]"
-                    : "text-white hover:text-[#d96c1e]"
+                    : "text-gray-800 hover:text-[#d96c1e]"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
             <Link href="/contact">
-              <Button className="bg-friench-blue text-white hover:bg-friench-blue/90">
+              <Button className="bg-friench-blue text-white hover:bg-friench-blue/90 shadow-lg">
                 Contact Us
               </Button>
             </Link>
@@ -67,7 +65,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white p-2 z-50 relative"
+            className="md:hidden text-gray-800 p-2 z-50 relative"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -77,7 +75,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed top-0 left-0 right-0 bottom-0 bg-black/95 backdrop-blur-md z-40">
+          <div className="md:hidden fixed top-0 left-0 right-0 bottom-0 bg-white/95 backdrop-blur-md z-40">
             <div className="flex flex-col h-full pt-20 px-6 py-4">
               <div className="flex-1 space-y-6">
                 {navLinks.map((link) => (
@@ -87,7 +85,7 @@ export default function Navigation() {
                     className={`block py-3 text-lg transition-colors font-medium ${
                       isActive(link.href)
                         ? "text-[#d96c1e]"
-                        : "text-white hover:text-[#d96c1e]"
+                        : "text-gray-800 hover:text-[#d96c1e]"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -96,7 +94,7 @@ export default function Navigation() {
                 ))}
               </div>
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full bg-[#d96c1e] text-white hover:bg-[#d96c1e]/90 py-3 text-lg">
+                <Button className="w-full bg-[#d96c1e] text-white hover:bg-[#d96c1e]/90 py-3 text-lg shadow-lg">
                   Contact Us
                 </Button>
               </Link>
