@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Code, Sun, Moon } from "lucide-react";
+import { Menu, X, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "@/contexts/theme-context";
 const logoImage = "/images/Feiechtechlogo(copy)_1753162037206.png";
 import heroVideo from "@assets/6036381_Keyboard_Laptop_3840x2160_1753162786293.mp4";
 
@@ -10,7 +9,6 @@ export default function Navigation() {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,19 +70,6 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <button
-              onClick={toggleTheme}
-              className={`p-2 rounded-lg transition-colors duration-150 ${
-                isScrolled 
-                  ? 'text-white hover:bg-white/10' 
-                  : theme === 'dark' 
-                    ? 'text-white hover:bg-white/10'
-                    : 'text-gray-800 hover:bg-gray-100'
-              }`}
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
             <Link href="/contact">
               <Button className="bg-friench-blue text-white hover:bg-friench-blue/90 shadow-lg">
                 Contact Us

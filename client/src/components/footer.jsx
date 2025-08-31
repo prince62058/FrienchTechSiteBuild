@@ -4,7 +4,7 @@ import logoImage from "@assets/Feiechtechlogo(copy)_1753162037206.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-card text-card-foreground py-16 border-t border-border transition-colors duration-300">
+    <footer className="bg-gray-900 text-white py-16">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2">
