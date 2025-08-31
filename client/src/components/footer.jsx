@@ -29,7 +29,7 @@ export default function Footer() {
   href="#"
   target="_blank"
   rel="noopener noreferrer"
-  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors"
+  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors duration-150"
 >
   <Twitter size={18} />
 </a>
@@ -38,7 +38,7 @@ export default function Footer() {
   href="https://www.linkedin.com/company/frienchtech-it-solutions/?viewAsMember=true"
   target="_blank"
   rel="noopener noreferrer"
-  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors"
+  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors duration-150"
 >
   <Linkedin size={18} />
 </a>
@@ -47,7 +47,7 @@ export default function Footer() {
   href="https://www.instagram.com/frienchtech_it/"
   target="_blank"
   rel="noopener noreferrer"
-  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors"
+  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-friench-blue transition-colors duration-150"
 >
   <Instagram size={18} />
 </a>
@@ -58,10 +58,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Explore</h3>
             <ul className="space-y-3">
-              <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">Core Values</Link></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a></li>
-              <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors duration-150">Core Values</Link></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-150">Privacy Policy</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-150">Terms & Conditions</a></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors duration-150">Contact Us</Link></li>
             </ul>
           </div>
           
