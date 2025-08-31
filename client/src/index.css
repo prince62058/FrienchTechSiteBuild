@@ -220,10 +220,15 @@
 
 
 @layer base {
-  * {
-    @apply border-border;
+  html, body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
   }
 
   body {
