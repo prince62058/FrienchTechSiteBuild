@@ -222,12 +222,16 @@
 @layer base {
   * {
     @apply border-border;
+    margin: 0;
+    padding: 0;
   }
 
   body {
     @apply font-sans antialiased text-foreground;
     font-family: 'Inter', sans-serif;
     background: transparent;
+    margin: 0;
+    padding: 0;
   }
 }
 

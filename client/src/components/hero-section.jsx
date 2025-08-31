@@ -65,7 +65,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-black/10 to-transparent z-1"></div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="relative min-h-screen py-20">
+        <div className="relative min-h-screen">
           <div className="text-white space-y-8 cinematic-content text-center max-w-4xl mx-auto flex items-center justify-center min-h-screen">
 
 
