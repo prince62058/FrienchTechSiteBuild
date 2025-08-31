@@ -373,6 +373,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce motion for better performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Stable footer - no animations */
 footer {
   transform: none !important;
@@ -384,6 +399,21 @@ footer * {
   transform: none !important;
   animation: none !important;
   transition: color 0.15s ease, background-color 0.15s ease !important;
+}
+
+/* Optimize image loading */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Reduce heavy animations */
+.animate-bounce {
+  animation: none;
+}
+
+.animate-pulse {
+  animation: none;
 }
 
 /* Custom scrollbar */

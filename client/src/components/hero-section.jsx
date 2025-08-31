@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Rocket, Zap, Globe } from "lucide-react";
 
-import AnimatedCounter from "./animated-counter";
-import { useScrollAnimations } from "@/hooks/use-scroll-animations";
-
-export default function HeroSection() {
-  const [scrollProgress, setScrollProgress] = useState(0);
+const HeroSection = memo(function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  useScrollAnimations();
 
   // Hero images array
   const heroImages = [
@@ -17,18 +12,6 @@ export default function HeroSection() {
     '/images/programming-background-with-person-working-with-codes-computer_1753935835418.jpg',
     '/images/person-working-html-computer_1753935835418.jpg'
   ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      const maxScroll = window.innerHeight;
-      const progress = Math.min(scrolled / maxScroll, 1);
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Image slider effect
   useEffect(() => {
@@ -154,4 +137,6 @@ export default function HeroSection() {
       </div>
     </section>
   );
-}
+});
+
+export default HeroSection;

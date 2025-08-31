@@ -1,13 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import HeroSection from "@/components/hero-section";
 import InteractiveStats from "@/components/interactive-stats";
 import TechnologyShowcase from "@/components/technology-showcase";
 import TestimonialsSection from "@/components/testimonials-section";
 import ModernServices from "@/components/modern-services";
-
-
-
-import { useScrollAnimations } from "@/hooks/use-scroll-animations";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -25,8 +21,7 @@ import {
   Users
 } from "lucide-react";
 
-export default function Home() {
-  useScrollAnimations();
+const Home = memo(function Home() {
 
   return (
     <div className="min-h-screen">
@@ -43,7 +38,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-black/5 to-transparent"></div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16 animate-on-scroll">
+          <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 text-cyan-300 border-cyan-300/50">
               <Award className="w-4 h-4 mr-2" />
               Why Choose FrienchTech
@@ -86,7 +81,7 @@ export default function Home() {
                 color: "from-purple-500 to-pink-500"
               }
             ].map((feature, index) => (
-              <Card key={index} className="group bg-slate-800/50 border-slate-700/50 hover:border-cyan-500/50 transition-all duration-500 animate-on-scroll backdrop-blur-sm">
+              <Card key={index} className="group bg-slate-800/50 border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 backdrop-blur-sm">
                 <CardContent className="p-6 text-center">
                   <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${feature.color} p-0.5 group-hover:scale-110 transition-transform duration-300`}>
                     <div className="w-full h-full bg-slate-800 rounded-full flex items-center justify-center">
@@ -117,7 +112,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent"></div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16 animate-on-scroll">
+          <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 text-purple-300 border-purple-300/50">
               <TrendingUp className="w-4 h-4 mr-2" />
               Our Process
@@ -159,7 +154,7 @@ export default function Home() {
                 icon: CheckCircle
               }
             ].map((phase, index) => (
-              <div key={index} className="flex items-start mb-12 animate-on-scroll group">
+              <div key={index} className="flex items-start mb-12 group">
                 <div className="flex-shrink-0 mr-8">
                   <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <phase.icon className="w-8 h-8 text-white" />
@@ -187,7 +182,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23334155%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
 
         <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="animate-on-scroll">
+          <div>
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-cyan-300 to-purple-300 bg-clip-text text-transparent">
                 Ready to Transform Your Business?
@@ -216,4 +211,6 @@ export default function Home() {
 
     </div>
   );
-}
+});
+
+export default Home;
