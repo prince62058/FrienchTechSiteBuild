@@ -39,7 +39,7 @@ export default function Navigation() {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 overflow-hidden ${
       isScrolled 
-        ? 'bg-blue-900/95 border-b border-blue-800 shadow-lg' 
+        ? 'bg-gray-800 border-b border-gray-700 shadow-lg' 
         : 'bg-transparent'
     }`}>
       
